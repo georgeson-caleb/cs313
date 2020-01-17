@@ -12,6 +12,22 @@
    </head>
    <body>
       <header id="title-header" class="jumbotron"><h1>My Assignments</h1></header>
-      <?php echo "hello!"; ?>
+      
+      <div>
+      <?php 
+      
+      $dir = '../';
+      $files = scandir($dir);
+
+      foreach ($files as $f) {
+         $line = '<a href="../' . $f . '/activity.html">' . $f . '</a>';
+         echo $line;
+      }
+
+
+
+      ?>
+      </div>
+      
    </body>
 </html>
