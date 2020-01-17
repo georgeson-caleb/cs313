@@ -16,3 +16,7 @@ body {
    display: flex;
    flex-direction: row;
 }
+
+.flex-child:hover {
+   font-weight: bold;
+}
