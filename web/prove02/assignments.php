@@ -14,19 +14,21 @@
       <header id="title-header" class="jumbotron"><h1>My Assignments</h1></header>
       
       <div>
+      <ul>
       <?php 
       
       $dir = '../';
-      $files = scandir($dir);
+      $files = array_diff(scandir($dir), array('..', '.', 'index.php'));
 
       foreach ($files as $f) {
-         $line = '<a href="../' . $f . '/activity.html">' . $f . '</a>';
+         $line = '<li><a href="../' . $f . '/activity.html">' . $f . '</a></li>';
          echo $line;
       }
 
 
 
       ?>
+      </ul>
       </div>
       
    </body>
