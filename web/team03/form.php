@@ -58,7 +58,7 @@ $continentDictionary = [
 
             // Loop to store and display values of individual checked checkbox.
             foreach($continents as $key => $value){
-               echo "<li>" . $value . "</li>";
+               echo "<li>" . $continentDictionary[$value] . "</li>";
             }
 
 

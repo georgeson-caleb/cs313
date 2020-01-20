@@ -3,16 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="main.js"></script>
     <title>Week 3 | Teach</title>
   </head>
   <main>
     <body>
       <?php 
-        include 'header.php';
+        include '../header.php';
       ?>
       
     <div class="jumbotron">
@@ -23,7 +22,7 @@
         <form action="form.php" method="post">
             <label for="name">Name</label>
             <input type="text" name="name">
-
+            <br>
             <label for="email">Email</label>
             <input type="text" name="email">
             <br>
@@ -35,7 +34,7 @@
                   echo '<input type="radio" name="major" value=' . $val . '>' . $val . '<br>';
                 }
             ?> 
-            <textarea placeholder="Comments..."></textarea>
+            <textarea placeholder="Comments..." name="comments"></textarea>
             <br>
 
             <input type="checkbox" name="continent[]" value="na">North America</input>
@@ -46,7 +45,7 @@
             <input type="checkbox" name="continent[]" value="aus">Australia</input>
             <input type="checkbox" name="continent[]" value="ant">Antarctica</input>
 
-
+            <br>
             <input type="submit">
         </form>
 
