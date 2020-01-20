@@ -8,7 +8,7 @@ $email = $_POST("email");
 $major = $_POST("major");
 $comments = $_POST("comments");
 
-$continents = $_POST('continent');
+$continents = $_POST('continents');
 
 
 //continent dictionary
