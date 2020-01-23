@@ -21,7 +21,7 @@
       $files = array_diff(scandir($dir), array('..', '.', 'index.php'));
 
       foreach ($files as $f) {
-         $line = '<li><a href="../' . $f . '/activity.html">' . $f . '</a></li>';
+         $line = '<li><a href="../' . $f . '/">' . $f . '</a></li>';
          echo $line;
       }
 
