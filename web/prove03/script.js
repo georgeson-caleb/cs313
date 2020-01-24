@@ -10,9 +10,13 @@ function addToCart(name, price) {
    item.name = name;
    item.price = price;
 
-   changeButton(name);
+   changeButtonToRed(name);
 
    itemList.push(item);
+}
+
+function removeFromCart(name) {
+   changeButtonToBlue(name);
 }
 
 function goToCart() {
