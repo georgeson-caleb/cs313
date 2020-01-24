@@ -41,8 +41,8 @@ function changeButtonToRed(name) {
    button.classList.remove("btn-primary");
    button.classList.add("btn-danger");
    button.innerHTML = "Remove from cart";
-   button.removeEventListener(click);
-   button.addEventListener(click, removeFromCart(name));
+   button.removeEventListener('onclick');
+   button.addEventListener('onclick', removeFromCart(name));
 }
 
 function changeButtonToBlue(name) {
@@ -50,6 +50,6 @@ function changeButtonToBlue(name) {
    button.classList.remove("btn-danger");
    button.classList.add("btn-primary");
    button.innerHTML = "Add to cart";
-   button.removeEventListener(click);
-   button.addEventListener(click, removeFromCart(name));
+   button.removeEventListener('onclick');
+   button.addEventListener('onclick', removeFromCart(name));
 }
