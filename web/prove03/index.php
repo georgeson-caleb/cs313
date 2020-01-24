@@ -25,7 +25,8 @@
                   "Dog" => "299"
                )
                foreach ($images as $image) {
-                  echo "<div class='my-1 mx-auto p-2 w-25 border rounded'><img src='$image.png' class='img-fluid'><p>$image </br> $prices[$image]</p><button class='btn btn-block btn-primary' onclick='addToCart($image, $prices[$image]'>Add to cart</button></div>";
+                  $price = $prices[$image];
+                  echo "<div class='my-1 mx-auto p-2 w-25 border rounded'><img src='$image.png' class='img-fluid'><p>$image </br> $price</p><button class='btn btn-block btn-primary' onclick='addToCart($image, $price'>Add to cart</button></div>";
                }
             ?>
 </div>
