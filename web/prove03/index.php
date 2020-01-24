@@ -18,7 +18,7 @@
             <?php
                $images = array("banana", "bike", "bottles", "laptop", "dog");
                foreach ($images as $image) {
-                  echo "<div class='w-25'><img src='$image.png' class='img-fluid'></div>";
+                  echo "<div class='m-1 p-2 w-25 border rounded'><img src='$image.png' class='img-fluid'><button class='btn btn-block' onclick='addToCart($image)'>Add to cart</button></div>";
                }
             ?>
 </div>
