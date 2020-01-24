@@ -16,7 +16,8 @@ function addToCart(name, price) {
 }
 
 function removeFromCart(name) {
-   document.getElementById(name).innerHTML = "";
+   var elem = document.getElementById(name);
+   elem.parentElement.removeChild(elem);
    for (var i = 0; i < itemList.length; i++) {
       if (itemList[i].name == name) {
          itemList.splice(i, 1);
