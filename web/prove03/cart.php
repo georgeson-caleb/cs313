@@ -1,3 +1,5 @@
+<?php
+
 $item-list = json_decode($_POST["itemList"]);
 $total-price = 0;
 
@@ -11,3 +13,5 @@ foreach($item-list as $item) {
 }
 
 echo("<div class='d-flex'><button class='btn float-left btn-primary' onclick='goShopping()'>Continue shopping</button><button class='btn float-right btn-primary' onclick='checkout()'>Checkout</button></div>")
+
+?>
