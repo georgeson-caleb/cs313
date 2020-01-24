@@ -13,11 +13,12 @@
          <h1>
             Miscellaneous Stuff For Sale
 </h1>
+</header>
          <div class="d-flex flex-wrap">
             <?php
                $images = array("banana", "bike", "bottles", "laptop", "dog");
                foreach ($images as $image) {
-                  echo "<div><img src='$image.png' class=''></div>";
+                  echo "<div class='w-25'><img src='$image.png' class='img-fluid'></div>";
                }
             ?>
 </div>
