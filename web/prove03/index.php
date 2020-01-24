@@ -15,11 +15,10 @@
 </h1>
          <div class="d-flex flex-wrap">
             <?php
-               $image = array("banana", "bike", "bottles", "laptop", "dog");
+               $images = array("banana", "bike", "bottles", "laptop", "dog");
                foreach ($images as $image) {
                   echo "<div><img src='$image.png' class=''></div>";
                }
-
             ?>
 </div>
    </body>
