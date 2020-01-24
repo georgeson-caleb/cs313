@@ -10,7 +10,7 @@ function addToCart(name, price) {
    item.name = name;
    item.price = price;
 
-   changeButtonToRed(name);
+   document.getElementById(name + "Button").disabled = true;
 
    itemList.push(item);
 }
@@ -34,22 +34,4 @@ function goToCart() {
 
 function updatePage(response) {
    document.getElementById("information").innerHTML = response;
-}
-
-function changeButtonToRed(name) {
-   var button = document.getElementById(name + "Button");
-   button.classList.remove("btn-primary");
-   button.classList.add("btn-danger");
-   button.innerHTML = "Remove from cart";
-   button.removeEventListener('onclick', addToCart(name));
-   button.addEventListener('onclick', removeFromCart(name));
-}
-
-function changeButtonToBlue(name) {
-   var button = document.getElementById(name + "Button");
-   button.classList.remove("btn-danger");
-   button.classList.add("btn-primary");
-   button.innerHTML = "Add to cart";
-   button.removeEventListener('onclick', removeFromCart(name));
-   button.addEventListener('onclick', addToCart(name));
 }
