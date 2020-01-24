@@ -3,7 +3,7 @@
    $itemList = json_decode($_POST["itemList"]);
    $totalPrice = 0;
 
-   foreach($item-list as $item) {
+   foreach($itemList as $item) {
       $imgName = $item->name . ".png";
       $price = $item->price;
 
