@@ -16,7 +16,12 @@ function addToCart(name, price) {
 }
 
 function removeFromCart(name) {
-   changeButtonToBlue(name);
+   document.getElementById(name).innerHTML = "";
+   for (var i = 0; i < itemList.length; i++) {
+      if (itemList[i].name == name) {
+         itemList.splice(i, 1);
+      }
+   }
 }
 
 function goToCart() {
