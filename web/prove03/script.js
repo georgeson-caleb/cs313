@@ -41,3 +41,20 @@ function goToCart() {
 function updatePage(response) {
    document.getElementById("information").innerHTML = response;
 }
+
+function goShopping() {
+   location.reload();
+}
+
+function checkout() {
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         updatePage(this.responseText);
+      }
+   }
+
+   xhttp.open("POST", "checkout.php", true);
+   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xhttp.send();
+}
