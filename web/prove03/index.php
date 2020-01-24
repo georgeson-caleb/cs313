@@ -19,9 +19,9 @@
                $images = array("Bananas", "Bike", "Bottles", "Laptop", "Dog");
                $prices = array(
                   "Bananas" => "1.98",
-                  "Bike" => "245"
-                  "Bottles" => "3.50"
-                  "Laptop" => "499"
+                  "Bike" => "245",
+                  "Bottles" => "3.50",
+                  "Laptop" => "499",
                   "Dog" => "299"
                )
                foreach ($images as $image) {
