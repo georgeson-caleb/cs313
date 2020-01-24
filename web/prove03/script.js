@@ -27,5 +27,5 @@ function goToCart() {
 }
 
 function updatePage(response) {
-   Document.getElementById("information").innerHTML = response;
+   document.getElementById("information").innerHTML = response;
 }
