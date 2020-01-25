@@ -9,7 +9,7 @@
       } 
    }
    
-   $_SESSION["totalPrice"] -= $_SESSION["cart"][$i]->price;
+   $_SESSION["totalPrice"] -= floatval($_SESSION["cart"][$i]->price);
 
    echo($_SESSION["totalPrice"]);
 
