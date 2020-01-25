@@ -29,7 +29,8 @@
                   echo "<div id='$image' class='col-sm-12 col-md-6 col-lg-3 m-1 p-2 border rounded'><img src='$image.png' class='img-fluid'><p>$image </br> $$price</p><button id=\"$image" . "Button\" class='btn btn-block btn-primary' onclick='addToCart(\"$image\", $price)'>Add to cart</button></div>";
                }
             ?>
-         <button class="btn btn-block btn-success" onclick="goToCart()">Go to Cart</button>
+         <button class="btn btn-block btn-success my-3" onclick="goToCart()">Go to Cart</button>
 </div>
+<footer class="jumbotron"></footer>
    </body>
 </html>
