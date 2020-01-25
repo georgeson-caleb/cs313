@@ -2,10 +2,13 @@
 
    session_start();
 
+   $item = json_decode($_POST("item"));
    if ($_SESSION["cart"] == null) {
-      $_SESSION["cart"] = array(json_decode($_POST["item"]));
+      $_SESSION["cart"] = array($item);
    } else {
-      array_push($_SESSION["cart"], json_decode($_POST["item"]));
+      array_push($_SESSION["cart"], $item);
    }
+
+   $_SESSION["totalPrice"] += floatval($item->price);
 
 ?>

@@ -2,6 +2,7 @@
    session_start();
    $array = array();
    $_SESSION["cart"] = $array;
+   $_SESSION["totalPrice"];
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@
          <div id="information" class="d-flex flex-wrap mx-auto my-3 p-3 w-75 border rounded">
             <?php
                session_start();
-               
+
                $images = array("Bananas", "Bike", "Bottles", "Laptop", "Dog");
                $prices = array(
                   "Bananas" => "1.98",
@@ -32,7 +33,7 @@
                   "Laptop" => "499",
                   "Dog" => "299"
                );
-               echo(json_encode($_SESSION["cart"]));
+
                foreach ($images as $image) {
                   $disabled = "";
                   foreach($_SESSION["cart"] as $cartItem) {
