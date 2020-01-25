@@ -5,7 +5,7 @@
    $totalPrice = 0;
 
    foreach($SESSION["cart"] as $item) {
-      $totalPrice += $item->price;
+      $totalPrice += floatval($item->price);
    }
 
    echo $totalPrice;
