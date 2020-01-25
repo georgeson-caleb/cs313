@@ -8,5 +8,5 @@
       $totalPrice += floatval($item->price);
    }
 
-   echo $totalPrice;
+   echo($totalPrice);
 ?>
