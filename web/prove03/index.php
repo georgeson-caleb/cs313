@@ -34,6 +34,8 @@
                   "Dog" => "299"
                );
 
+               echo("<script>console.log(" . json_encode($_SESSION["cart"]) . ");</script>");
+
                foreach ($images as $image) {
                   $disabled = "";
                   for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
