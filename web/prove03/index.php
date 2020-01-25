@@ -22,6 +22,8 @@
 </header>
          <div id="information" class="d-flex flex-wrap mx-auto my-3 p-3 w-75 border rounded">
             <?php
+               session_start();
+               
                $images = array("Bananas", "Bike", "Bottles", "Laptop", "Dog");
                $prices = array(
                   "Bananas" => "1.98",
