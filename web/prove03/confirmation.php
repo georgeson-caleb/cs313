@@ -1,5 +1,6 @@
 <?php
 
+   session_start();
    $address = json_decode(strip_tags($_POST["address"]));
    echo(json_encode($_SESSION["cart"]));
 

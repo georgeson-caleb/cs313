@@ -1,9 +1,8 @@
 <?php
-
-   $itemList = json_decode($_POST["itemList"]);
+   session_start();
    $totalPrice = 0;
 
-   foreach($itemList as $item) {
+   foreach($_SESSION["cart"] as $item) {
       $imgName = $item->name . ".png";
       $price = $item->price;
 

@@ -22,25 +22,17 @@ function addToCart(name, price) {
 
    storeInSession(JSON.stringify(item));
 
-   itemList.push(item);
+   //itemList.push(item);
 }
 
 function removeFromCart(name) {
-   var totalPrice = parseFloat(document.getElementById("totalPrice").innerHTML);
    // Remove from DOM
    var elem = document.getElementById(name);
    elem.parentElement.removeChild(elem);
    // Remove from itemList
-   for (var i = 0; i < itemList.length; i++) {
-      if (itemList[i].name == name) {
-         totalPrice -= itemList[i].price;
-         deleteFromSession(JSON.stringify(itemList[i]));
-         itemList.splice(i, 1);
-      }
-   }
+   deleteFromSession(name);
    // Update total price
-   document.getElementById("totalPrice").innerHTML = totalPrice;
-   
+   document.getElementById("totalPrice").innerHTML = getTotalPrice();
 }
 
 function goToCart() {
@@ -157,4 +149,16 @@ function deleteFromSession(data) {
    xhttp.open("POST", "removeFromCart.php", true);
    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
    xhttp.send("item=" + data);
+}
+
+function getTotalprice() {
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         return this.responseText;
+      }
+   }
+
+   xhttp.open("POST", "totalPrice.php", true);
+   xhttp.send();
 }

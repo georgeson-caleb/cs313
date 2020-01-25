@@ -1,9 +1,13 @@
 <?php
    session_start();
+
+   $index;
+
+   for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
+      if ($_SESSION["cart"][i]->name == $_POST["item"]) {
+         $index = $i;
+      }
+   }
    
-   $index = array_search(json_decode($_POST["item"]), $_SESSION["cart"]);
    array_splice($_SESSION["cart"], $index);
-
-   echo(json_encode($_SESSION["cart"]));
-
 ?>
