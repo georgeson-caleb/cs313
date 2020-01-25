@@ -1,5 +1,7 @@
 <?php
-   session_start();
+   if (!isset($_SESSION)){
+      session_start();
+   }
    $array = array();
    $_SESSION["cart"] = $array;
    $_SESSION["totalPrice"];
@@ -23,7 +25,6 @@
 </header>
          <div id="information" class="d-flex flex-wrap mx-auto my-3 p-3 w-75 border rounded">
             <?php
-               session_start();
 
                $images = array("Bananas", "Bike", "Bottles", "Laptop", "Dog");
                $prices = array(
