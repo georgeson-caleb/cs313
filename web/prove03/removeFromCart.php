@@ -8,7 +8,7 @@
       if ($_SESSION["cart"][i]->name == $_POST["item"]) {
          $index = $i;
       } else {
-         $totalPrice += $_SESSION["cart"][i]->price;
+         $totalPrice += floatval($_SESSION["cart"][i]->price);
       }
    }
    
