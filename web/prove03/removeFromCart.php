@@ -10,5 +10,8 @@
    }
    
    $_SESSION["totalPrice"] -= $_SESSION["cart"][i]->price;
+
+   echo($_SESSION["totalPrice"]);
+
    array_splice($_SESSION["cart"], $index);
 ?>

@@ -12,4 +12,7 @@
 
    $_SESSION["totalPrice"] += floatval($item->price);
 
+
+   echo($_SESSION["totalPrice"]);
+
 ?>
