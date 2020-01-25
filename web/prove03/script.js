@@ -63,11 +63,11 @@ function confirmPurchase() {
    // Check the user's input
    var valid = true;
    var elemList = [];
-   elemList.add(document.getElementById("addressLine1"));
-   elemList.add(document.getElementById("addressLine2"));
-   elemList.add(document.getElementById("city"));
-   elemList.add(document.getElementById("state"));
-   elemList.add(document.getElementById("zip"));
+   elemList.push(document.getElementById("addressLine1"));
+   elemList.push(document.getElementById("addressLine2"));
+   elemList.push(document.getElementById("city"));
+   elemList.push(document.getElementById("state"));
+   elemList.push(document.getElementById("zip"));
 
    for (var i = 0; i < elemList.length; i++) {
       // Address Line 2 is not required
@@ -85,6 +85,9 @@ function confirmPurchase() {
 
       if (valid) {
          //Go to confirmation page
+      } else {
+         // Show invalid message
+         document.getElementById("invalid-message").classList.remove("d-none");
       }
    }
    

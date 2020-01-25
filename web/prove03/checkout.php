@@ -7,7 +7,7 @@
       "<input class='form-control' type=text placeholder='State *' id=state>" .
       "<input class='form-control' type=text placeholder='Zip Code *' id=zip>" .
       "<h5>Items denoted with a * are required</h5>" .
-      "<h5 class='bg-danger text-white border rounded'>Please fill in all required fields</h5>" .
+      "<h5 class='bg-danger text-white border rounded d-none'>Please fill in all required fields</h5>" .
       "<button class='btn btn-danger' type=button onclick='goToCart()'>Return to Cart</button>" . 
       "<button class='btn btn-success' type=button onclick='confirmPurchase()'>Confirm Purchase</button>" .
       "</div>");
