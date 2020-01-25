@@ -79,7 +79,8 @@ function confirmPurchase() {
             // Set valid to false
             valid = false;
             // Show that the box is invalid
-            elemList[i].classList.add("border border-danger");
+            elemList[i].classList.add("border");
+            elemList[i].classList.add("border-danger");
          }
       }
 
