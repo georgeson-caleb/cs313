@@ -19,7 +19,7 @@
             Miscellaneous Stuff For Sale
 </h1>
 </header>
-         <div id="information" class="d-flex flex-wrap mx-auto w-75 border rounded">
+         <div id="information" class="d-flex flex-wrap mx-auto my-3 p-3 w-75 border rounded">
             <?php
                $images = array("Bananas", "Bike", "Bottles", "Laptop", "Dog");
                $prices = array(
@@ -29,6 +29,7 @@
                   "Laptop" => "499",
                   "Dog" => "299"
                );
+               echo(json_encode($_SESSION["cart"]));
                foreach ($images as $image) {
                   $disabled = "";
                   foreach($_SESSION["cart"] as $cartItem) {

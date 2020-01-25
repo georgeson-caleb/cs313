@@ -1,6 +1,7 @@
 <?php
 
    $address = json_decode(strip_tags($_POST["address"]));
+   echo(json_encode($_SESSION["cart"]));
 
    // Confirmation message
    $confirmationMessage = "<h2 class='w-100'>Thank you for your order!</h2>";
@@ -9,7 +10,7 @@
    // Items purchased
    $confirmationMessage .= "<div id='itemsPurchased' class='w-100 border rounded'>These items will be shipped to you:<div class='d-flex'>";
 
-   foreach ($_SESSION["cart"] as $item) {
+   foreach($_SESSION["cart"] as $item) {
       $confirmationMessage .= "<div id='$item->name' class='col-sm-12 col-md-6 col-lg-3 m-1 p-2 border rounded'><img src='$item->name.png' class='img-fluid'><p>$item->name</p></div>";
    }
 
