@@ -32,7 +32,7 @@ function removeFromCart(name) {
    // Remove from itemList
    deleteFromSession(name);
    // Update total price
-   document.getElementById("totalPrice").innerHTML = getTotalPrice();
+   getTotalPrice();
 }
 
 function goToCart() {
@@ -157,10 +157,14 @@ function getTotalPrice() {
    xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
          console.log(this.responseText);
-         return this.responseText;
+         updateTotalPrice(this.responseText);
       }
    }
 
    xhttp.open("POST", "totalPrice.php", true);
    xhttp.send();
+}
+
+function updateTotalPrice(price) {
+   document.getElementById("totalPrice").innerHTML = "" + price;
 }
