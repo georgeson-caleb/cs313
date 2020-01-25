@@ -30,9 +30,9 @@ function removeFromCart(name) {
    var elem = document.getElementById(name);
    elem.parentElement.removeChild(elem);
    // Remove from itemList
-   deleteFromSession(name);
+   var totalPrice = deleteFromSession(name);
    // Update total price
-   document.getElementById("totalPrice").innerHTML = getTotalPrice();
+   document.getElementById("totalPrice").innerHTML = totalPrice;
 }
 
 function goToCart() {
@@ -143,6 +143,7 @@ function deleteFromSession(data) {
    xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
          console.log(this.responseText);
+         return this.responseText;
       }
    }
 
