@@ -5,3 +5,7 @@ body {
 .focus {
    background-color: #F56161;
 }
+
+div {
+   background-color: white;
+}
