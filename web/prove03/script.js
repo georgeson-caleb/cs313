@@ -114,7 +114,7 @@ function processAddress(elemList) {
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-         // Show confirmation page
+         document.getElementById("information").innerHTML = this.responseText;
       }
    }
 
