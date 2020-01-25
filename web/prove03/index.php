@@ -36,11 +36,11 @@
 
                foreach ($images as $image) {
                   $disabled = "";
-                  foreach($_SESSION["cart"] as $cartItem) {
-                     if ($image == $cartItem->name) {
+                  for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
+                     if ($_SESSION["cart"][$i]->name == $image) {
                         $disabled = "disabled";
-                     }
-                  } 
+                     } 
+                  }
                   $price = $prices[$image];
                   echo "<div id='$image' class='col-sm-12 col-md-6 col-lg-3 m-1 p-2 border rounded'><img src='$image.png' class='img-fluid'><p>$image </br> $$price</p><button id=\"$image" . "Button\" class='btn btn-block btn-primary' onclick='addToCart(\"$image\", $price)' $disabled>Add to cart</button></div>";
                }

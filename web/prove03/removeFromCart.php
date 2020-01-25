@@ -11,7 +11,7 @@
    
    $_SESSION["totalPrice"] -= floatval($_SESSION["cart"][$index]->price);
 
-   echo($_SESSION["totalPrice"]);
-
    array_splice($_SESSION["cart"], $index);
+
+   echo($_SESSION["totalPrice"]);
 ?>
