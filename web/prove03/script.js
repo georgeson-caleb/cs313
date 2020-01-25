@@ -3,6 +3,14 @@ class Item {
    price;
 }
 
+class Address {
+   add1;
+   add2;
+   city;
+   state;
+   zip;
+}
+
 var itemList = [];
 
 function addToCart(name, price) {
@@ -85,11 +93,32 @@ function confirmPurchase() {
       }
 
       if (valid) {
-         //Go to confirmation page
+         // Go to confirmation page
+         processAddress(elemList);
       } else {
          // Show invalid message
          document.getElementById("invalid-message").classList.remove("d-none");
       }
    }
    
+}
+
+function processAddress(elemList) {
+   var address = new Address;
+   address.add1 = elemList[0].value;
+   address.add2 = elemList[1].value;
+   address.city = elemList[2].value;
+   address.state = elemList[3].value;
+   address.zip = elemList[4].value;
+
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         // Show confirmation page
+      }
+   }
+
+   xhttp.open("POST", "confirmation.php", true);
+   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xhttp.send("address=" + JSON.stringify(address) + "&items=" + JSON.stringify(itemList));
 }

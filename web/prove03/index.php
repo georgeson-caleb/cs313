@@ -26,7 +26,7 @@
                );
                foreach ($images as $image) {
                   $price = $prices[$image];
-                  echo "<div id='$image' class='m-1 p-2 w-50 border rounded'><img src='$image.png' class='img-fluid'><p>$image </br> $$price</p><button id=\"$image" . "Button\" class='btn btn-block btn-primary' onclick='addToCart(\"$image\", $price)'>Add to cart</button></div>";
+                  echo "<div id='$image' class='col-sm-12 col-md-6 col-lg-3 m-1 p-2 border rounded'><img src='$image.png' class='img-fluid'><p>$image </br> $$price</p><button id=\"$image" . "Button\" class='btn btn-block btn-primary' onclick='addToCart(\"$image\", $price)'>Add to cart</button></div>";
                }
             ?>
          <button class="btn btn-block btn-success" onclick="goToCart()">Go to Cart</button>
