@@ -18,7 +18,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
    <body>
-      <header class="jumbotron">
+      <header class="jumbotron focus">
          <h1>
             Miscellaneous Stuff For Sale
 </h1>
@@ -50,6 +50,6 @@
             ?>
          <button class="btn btn-block btn-success my-3" onclick="goToCart()">Go to Cart</button>
 </div>
-<footer class="jumbotron"></footer>
+<footer class="jumbotron focus"></footer>
    </body>
 </html>
