@@ -1,3 +1,8 @@
+<?php
+   session_start();
+   $_SESSION["cart"] = array();
+?>
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -14,7 +19,7 @@
             Miscellaneous Stuff For Sale
 </h1>
 </header>
-         <div id="information" class="d-flex flex-wrap mx-auto w-75">
+         <div id="information" class="d-flex flex-wrap mx-auto w-75 border rounded">
             <?php
                $images = array("Bananas", "Bike", "Bottles", "Laptop", "Dog");
                $prices = array(
@@ -25,8 +30,14 @@
                   "Dog" => "299"
                );
                foreach ($images as $image) {
+                  $disabled = "";
+                  foreach($_SESSION["cart"] as $cartItem) {
+                     if ($image == $cartItem->name) {
+                        $disabled = "disabled";
+                     }
+                  } 
                   $price = $prices[$image];
-                  echo "<div id='$image' class='col-sm-12 col-md-6 col-lg-3 m-1 p-2 border rounded'><img src='$image.png' class='img-fluid'><p>$image </br> $$price</p><button id=\"$image" . "Button\" class='btn btn-block btn-primary' onclick='addToCart(\"$image\", $price)'>Add to cart</button></div>";
+                  echo "<div id='$image' class='col-sm-12 col-md-6 col-lg-3 m-1 p-2 border rounded'><img src='$image.png' class='img-fluid'><p>$image </br> $$price</p><button id=\"$image" . "Button\" class='btn btn-block btn-primary' onclick='addToCart(\"$image\", $price)' $disabled>Add to cart</button></div>";
                }
             ?>
          <button class="btn btn-block btn-success my-3" onclick="goToCart()">Go to Cart</button>

@@ -20,6 +20,8 @@ function addToCart(name, price) {
 
    document.getElementById(name + "Button").disabled = true;
 
+   storeInSession(JSON.stringify(item));
+
    itemList.push(item);
 }
 
@@ -32,6 +34,7 @@ function removeFromCart(name) {
    for (var i = 0; i < itemList.length; i++) {
       if (itemList[i].name == name) {
          totalPrice -= itemList[i].price;
+         deleteFromSession(JSON.stringify(itemList[i]));
          itemList.splice(i, 1);
       }
    }
@@ -128,4 +131,30 @@ function processAddress(elemList) {
    xhttp.open("POST", "confirmation.php", true);
    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
    xhttp.send("address=" + JSON.stringify(address) + "&items=" + JSON.stringify(itemList));
+}
+
+function storeInSession(data) {
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         
+      }
+   }
+
+   xhttp.open("POST", "addToCart.php", true);
+   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xhttp.send("item=" + data);
+}
+
+function deleteFromSession(data) {
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         
+      }
+   }
+
+   xhttp.open("POST", "removeFromCart.php", true);
+   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xhttp.send("item=" + data);
 }
