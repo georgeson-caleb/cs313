@@ -11,7 +11,7 @@
    $confirmationMessage .= "<div id='itemsPurchased' class=''>These items will be shipped to you:<div class='d-flex'>";
 
    foreach ($items as $item) {
-      confirmationMessage .= "<div id='$item->name' class='col-sm-12 col-md-6 col-lg-3'><img src='$item->name.png' class='img-fluid'><p>$item->name</p></div>";
+      $confirmationMessage .= "<div id='$item->name' class='col-sm-12 col-md-6 col-lg-3'><img src='$item->name.png' class='img-fluid'><p>$item->name</p></div>";
    }
 
    $confirmationMessage .= "</div></div>";
