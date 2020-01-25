@@ -24,13 +24,22 @@ function addToCart(name, price) {
 }
 
 function removeFromCart(name) {
+   var totalPrice = 0;
+   // Remove from DOM
    var elem = document.getElementById(name);
    elem.parentElement.removeChild(elem);
+   // Remove from itemList
    for (var i = 0; i < itemList.length; i++) {
       if (itemList[i].name == name) {
          itemList.splice(i, 1);
+      } else {
+         // Add price to total
+         totalPrice += itemList[i].price;
       }
    }
+   // Update total price
+   document.getElementById("totalPrice").innerHTML = totalPrice;
+   
 }
 
 function goToCart() {
