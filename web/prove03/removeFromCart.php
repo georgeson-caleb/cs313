@@ -4,7 +4,7 @@
    $index = 0;
 
    for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
-      if ($_SESSION["cart"][i]->name == $_POST["item"]) {
+      if ($_SESSION["cart"][$i]->name == $_POST["item"]) {
          $index = $i;
       } 
    }
