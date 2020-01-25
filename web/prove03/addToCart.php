@@ -2,7 +2,7 @@
 
    session_start();
 
-   $item_json = $_POST("item");
+   $item_json = $_POST["item"];
    $item = json_decode($item_json);
    if ($_SESSION["cart"] == null) {
       $_SESSION["cart"] = array($item);
