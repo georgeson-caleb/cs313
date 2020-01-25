@@ -30,9 +30,9 @@ function removeFromCart(name) {
    var elem = document.getElementById(name);
    elem.parentElement.removeChild(elem);
    // Remove from itemList
-   var totalPrice = deleteFromSession(name);
+   deleteFromSession(name);
    // Update total price
-   document.getElementById("totalPrice").innerHTML = totalPrice;
+   document.getElementById("totalPrice").innerHTML = getTotalPrice();
 }
 
 function goToCart() {
