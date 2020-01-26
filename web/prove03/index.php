@@ -18,7 +18,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
    <body>
-      <header class="jumbotron focus">
+      <header class="jumbotron focus"> 
          <h1 class="mx-auto">
             Miscellaneous Stuff For Sale
 </h1>

@@ -10,7 +10,7 @@
    }
    
    $_SESSION["totalPrice"] -= floatval($_SESSION["cart"][$index]->price);
-
+ 
    array_splice($_SESSION["cart"], $index);
 
    echo($_SESSION["totalPrice"]);

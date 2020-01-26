@@ -167,4 +167,4 @@ function getTotalPrice() {
 
 function updateTotalPrice(price) {
    document.getElementById("totalPrice").innerHTML = "" + price;
-}
+} 

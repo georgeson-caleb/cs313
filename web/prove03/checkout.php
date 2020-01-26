@@ -10,6 +10,6 @@
       "<h5 id='invalid-message' class='bg-danger text-white border rounded d-none'>Please fill in all required fields</h5>" .
       "<button class='btn btn-danger' type=button onclick='goToCart()'>Return to Cart</button>" . 
       "<button class='btn btn-success' type=button onclick='confirmPurchase()'>Confirm Purchase</button>" .
-      "</div>");
+      "</div>"); 
 
 ?>

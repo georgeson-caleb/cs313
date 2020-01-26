@@ -2,7 +2,7 @@
 
    session_start();
 
-   $address = json_decode(strip_tags($_POST["address"]));
+   $address = json_decode(strip_tags($_POST["address"])); 
 
    // Confirmation message
    $confirmationMessage = "<h2 class='w-100'>Thank you for your order!</h2>";

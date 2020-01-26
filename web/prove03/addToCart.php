@@ -13,6 +13,6 @@
    $_SESSION["totalPrice"] += floatval($item->price);
 
 
-   echo($_SESSION["totalPrice"]);
+   echo($_SESSION["totalPrice"]); 
 
 ?>
