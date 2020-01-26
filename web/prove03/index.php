@@ -19,7 +19,7 @@
 </head>
    <body>
       <header class="jumbotron focus">
-         <h1>
+         <h1 class="mx-auto">
             Miscellaneous Stuff For Sale
 </h1>
 </header>
