@@ -2,6 +2,11 @@
    margin-bottom: 0;
 }
 
+.error {
+   color: red;
+   display: none;
+}
+
 #top, #bottom {
    background-color: #DBCD29;
 }

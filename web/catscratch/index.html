@@ -14,8 +14,8 @@
       <header class="jumbotron" id="top">
          <h1>Catscratch</h1>
       </header>
-      <div class="d-flex border rounded w-75 mx-auto my-4">
-         <div id="filler" class="border rounded col-lg-4 col-sm-12 mx-auto my-4">
+      <div class="d-flex border rounded mx-auto my-4">
+         <div id="filler" class="border rounded col-lg-6 col-sm-12 mx-auto my-4">
             <div id="carousel" class="carousel slide" data-ride="carousel">
                <ul class="carousel-indicators">
                  <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -41,12 +41,23 @@
                </a>
              </div>
          </div>
-         <div id="login" class="border rounded col-lg-4 col-sm-12 mx-auto my-4 p-3"> 
+         <div id="login" class="border rounded col-lg-3 col-sm-12 mx-auto my-4 p-3"> 
             <form action="validateLogin.php" method="post">
                <input type="text" class="mx-auto my-1 border rounded p-2" id="username" placeholder="Username"><br>
                <input type="password" class="mx-auto my-1 border rounded p-2" id="password" placeholder="Password"><br>
-               <button type="submit" class="btn btn-primary mx-auto my-1 border rounded">Login</button> or 
-               <button type="button" class="btn btn-success mx-auto my-1 border rounded">Sign Up!</button>
+               <button type="submit" class="btn btn-primary mx-auto my-1 border rounded">Login</button>
+            </form>
+         </div>
+         <div id="signup" class="border rounded col-lg-4 col-sm-12 mx-auto my-4 p-3">
+            <form>
+               <input type="text" class="mx-auto my-1 border rounded p-2" id="usernameSignup" placeholder="Username"><br>
+               <span id="usernameSignupError" class="error">* Username can't have spaces.</span><br>
+               <input type="text" class="mx-auto my-1 border rounded p-2" id="email" placeholder="Email"><br>
+               <span id="emailError" class="error">* Please enter a valid email.</span><br>
+               <input type="password" class="mx-auto my-1 border rounded p-2" id="password1" placeholder="Password"><br>
+               <span id="passwordError" class="error">Passwords must match</span><br>
+               <input type="password" class="mx-auto my-1 border rounded p-2" id="password2" placeholder="Verify Password"><br>
+               <button type="button" class="btn btn-success mx-auto my-1 border rounded" onclick="signup()">Sign Up!</button>
             </form>
          </div>
       </div>
