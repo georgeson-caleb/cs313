@@ -14,6 +14,8 @@
    $query = "INSERT INTO users (username, email, pass) VALUES (:username, :email, :tater);";
 
    $stmt = $db->prepare($query);
-   $stmt->bindValue(':username', $username, )
+   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+   $stmt->bindValue(':email', $username, PDO::PARAM_STR);
+   $stmt->bindValue(':tater', $tater, PDO::PARAM_STR);   
    $stmt->execute();
 ?>
