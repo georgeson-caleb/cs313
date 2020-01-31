@@ -60,7 +60,7 @@ function submitSignupInfo(username, email, password) {
       }
    }
 
-   xhttp.open("POST", submitSignup.php, true);
+   xhttp.open("POST", "submitSignup.php", true);
    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
    xhttp.send("username=" + username + "&email=" + email + "&password=" + password);
 }
