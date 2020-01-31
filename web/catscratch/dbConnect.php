@@ -16,7 +16,7 @@
          $dbName = ltrim($dbUrlParts["path"], '/');
 
          // Create the PDO Connection
-         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbName=$dbName", $dbUser, $dbPassword);
+         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;", $dbUser, $dbPassword);
 
          $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          
