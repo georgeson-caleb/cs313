@@ -22,7 +22,7 @@
          
       }
       catch (PDOException $ex) {
-         echo "Connection error.";
+         echo "Connection error. $ex";
          die();
       }
 
