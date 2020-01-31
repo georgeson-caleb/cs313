@@ -56,11 +56,22 @@ function submitSignupInfo(username, email, password) {
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-         console.log(this.responseText);
+         processSignUpResponse(this.responseText);
       }
    }
 
    xhttp.open("POST", "submitSignup.php", true);
    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
    xhttp.send("username=" + username + "&email=" + email + "&password=" + password);
+}
+
+function processSignUpResponse(response) {
+   var obj = JSON.parse(response);
+   if (obj.uservalid) {
+      console.log("Valid username");
+   }
+
+   if (obj.emailvalid) {
+      console.log("Valid email");
+   }
 }
