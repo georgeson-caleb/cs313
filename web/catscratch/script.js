@@ -56,7 +56,7 @@ function submitSignupInfo(username, email, password) {
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-         //Go to homepage
+         console.log(this.responseText);
       }
    }
 
