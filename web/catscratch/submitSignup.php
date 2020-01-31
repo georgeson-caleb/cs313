@@ -46,5 +46,5 @@
       $stmt->execute();
    } 
 
-   echo "{uservalid:\"$uservalid\", emailvalid:\"$emailvalid\"}";
+   echo "{\"uservalid\":\"$uservalid\", \"emailvalid\":\"$emailvalid\"}";
 ?> 
