@@ -5,6 +5,7 @@
       try {
          // Receive the url for Heroku
          $dbUrl = getenv('DATABASE_URL');
+         echo $dbUrl;
 
          // Separate the parts of the url
          $dbUrlParts = parse_url($dbUrl);
