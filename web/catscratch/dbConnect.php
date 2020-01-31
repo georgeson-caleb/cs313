@@ -3,21 +3,17 @@
       $db = null;
 
       try {
-         // Receive the url for Heroku
          $dbUrl = getenv('DATABASE_URL');
-         echo $dbUrl;
 
-         // Separate the parts of the url
-         $dbUrlParts = parse_url($dbUrl);
+         $dbOpts = parse_url($dbUrl);
 
-         $dbHost = $dbUrlParts["host"];
-         $dbPort = $dbUrlParts["port"];
-         $dbUser = $dbUrlParts["user"];
-         $dbPassword = $dbUrlParts["pass"];
-         $dbName = ltrim($dbUrlParts["path"], '/');
+         $dbHost = $dbOpts["host"];
+         $dbPort = $dbOpts["port"];
+         $dbUser = $dbOpts["user"];
+         $dbPassword = $dbOpts["pass"];
+         $dbName = ltrim($dbOpts["path"],'/');
 
-         // Create the PDO Connection
-         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;", $dbUser, $dbPassword);
+         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
          $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          
