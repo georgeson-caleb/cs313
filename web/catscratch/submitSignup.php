@@ -2,9 +2,14 @@
 
    require("dbConnect.php");
 
-   $username = strip_tags($_POST["username"]);
-   $email = strip_tags($_POST["email"]);
-   $password = strip_tags($_POST["password"]);
+   # $username = strip_tags($_POST["username"]);
+   # $email = strip_tags($_POST["email"]);
+   # $password = strip_tags($_POST["password"]);
+
+   $username = "username";
+   $email = "name@example.com";
+   $password = "password";
+
 
    $tater = password_hash($password, PASSWORD_BCRYPT);
 

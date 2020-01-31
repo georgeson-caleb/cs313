@@ -1,5 +1,5 @@
 <?php 
-   functio get_db() {
+   function get_db() {
       $db = null;
 
       try {
