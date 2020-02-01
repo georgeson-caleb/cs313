@@ -2,8 +2,8 @@
    require("dbConnect.php");
    $db = get_db();
 
-   $username = $_POST["username"];
-   $password = $_POST["password"];
+   $username = strip_tags($_POST["username"]);
+   $password = strip_tags($_POST["password"]);
    $query = "SELECT pass FROM users WHERE username=:username";
    $stmt = $db->prepare($query);
    $stmt->bindValue(":username", $username, PDO::PARAM_STR);
@@ -12,7 +12,7 @@
    $hash = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
    echo("is this working?");
-   
+
    //echo(password_verify($password[0], $hash));
 
    /*
