@@ -99,3 +99,7 @@ function login() {
    xhttp.send("username=" + username + "&password=" + password);
 }
 
+function processLogin(response) {
+   console.log(response);
+}
+
