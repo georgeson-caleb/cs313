@@ -11,7 +11,7 @@
 
    $hash = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   echo password_verify($password[0], $hash);
+   echo(password_verify($password[0], $hash));
 
    /*
    if (count($password) > 1) {
