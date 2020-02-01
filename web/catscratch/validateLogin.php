@@ -18,7 +18,7 @@
       echo "invalid credentials";
    } else {
       # check the password
-      if (password_verify($password[0], $hash)) {
+      if (password_verify('$password[0]', '$hash')) {
          echo "logging in...";
       } else {
          # send password error message
