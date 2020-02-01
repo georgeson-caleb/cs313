@@ -11,8 +11,9 @@
 
    $hash = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   //echo password_verify($password[0], $hash);
+   echo password_verify($password[0], $hash);
 
+   /*
    if (count($password) > 1) {
       #something is wrong. there should only be 1
    } else if (count($password) == 0) {
@@ -27,4 +28,5 @@
          echo "invalid credentials";
       }
    }
+   */
 ?>
