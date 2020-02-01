@@ -67,11 +67,35 @@ function submitSignupInfo(username, email, password) {
 
 function processSignUpResponse(response) {
    var obj = JSON.parse(response);
-   if (obj.uservalid) {
-      console.log("Valid username");
+   if (!obj.uservalid) {
+      showError("usernameSignupError", "Username has already been taken");
+   } else {
+      disableError("usernameSignupError");
    }
 
-   if (obj.emailvalid) {
-      console.log("Valid email");
+   if (!obj.emailvalid) {
+      showError("emailError", "Email has already been used with another account.");
+   } else {
+      disableError("emailError");
+   }
+
+   if (obj.uservalid && obj.emailvalid) {
+      console.log("Successfully signed up!");
    }
 }
+
+function login() {
+   var username = document.getElementById("username").value;
+   var password = document.getElementById("password").value;
+
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+      if (this.readystate == 4 && this.status == 200) {
+         processLogin(this.responseText);
+      }
+   }
+   xhttp.open("POST", "validateLogin.php", true);
+   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xhttp.send("username=" + username + "&password=" + password);
+}
+
