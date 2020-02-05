@@ -1,15 +1,15 @@
 <?php 
-   require("dbConnect.php");
-   $db = get_db();
-
-   $username = strip_tags($_POST["username"]);
-   $password = strip_tags($_POST["password"]);
-   $query = "SELECT pass FROM users WHERE username=:username";
-   $stmt = $db->prepare($query);
-   $stmt->bindValue(":username", $username, PDO::PARAM_STR);
-   $stmt->execute();
-
-   $hash = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   //require("dbConnect.php");
+   //$db = get_db();
+//
+   //$username = strip_tags($_POST["username"]);
+   //$password = strip_tags($_POST["password"]);
+   //$query = "SELECT pass FROM users WHERE username=:username";
+   //$stmt = $db->prepare($query);
+   //$stmt->bindValue(":username", $username, PDO::PARAM_STR);
+   //$stmt->execute();
+//
+   //$hash = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
    echo("is this working?");
 
