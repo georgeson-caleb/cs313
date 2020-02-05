@@ -17,7 +17,7 @@
       #something is wrong. there should only be 1
    } else if (count($password) == 0) {
       # Invalid username
-      echo "invalid credentials";
+      echo "something wrong";
    } else {
       # check the password
       if (password_verify($password[0], $hash)) {
