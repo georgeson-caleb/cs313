@@ -20,7 +20,7 @@
       echo "something wrong";
    } else {
       # check the password
-      if (password_verify($password, $hash[0])) {
+      if (password_verify($password, $hash)) {
          echo "logging in...";
       } else {
          # send password error message
