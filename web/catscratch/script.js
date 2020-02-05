@@ -80,7 +80,7 @@ function processSignUpResponse(response) {
    }
 
    if (obj.uservalid && obj.emailvalid) {
-      console.log("Successfully signed up!");
+      window.location.href = "https://fast-eyrie-52386.herokuapp.com/catscratch/home.php";
    }
 }
 
@@ -99,7 +99,11 @@ function login() {
    xhttp.send("username=" + username + "&password=" + password);
 }
 
-function processLogin(response) {
-   //console.log(response);
+function processLogin(success) {
+   if (success) {
+      window.location.href = "https://fast-eyrie-52386.herokuapp.com/catscratch/home.php";
+   } else {
+      showError("loginError", "Invalid credentials.");
+   }
 }
 

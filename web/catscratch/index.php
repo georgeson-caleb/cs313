@@ -46,6 +46,7 @@
          </div>
          <div id="login" class="border rounded col-lg-3 col-md-3 col-sm-12 mx-0 my-4 p-3"> 
             <form>
+               <span id="loginError" class="error"></span>
                <input type="text" class="mx-auto my-1 border rounded p-2" id="username" placeholder="Username"><br>
                <input type="password" class="mx-auto my-1 border rounded p-2" id="password" placeholder="Password"><br>
                <button type="button" class="btn btn-primary mx-auto my-1 border rounded" onclick="login()">Login</button>

@@ -51,11 +51,4 @@
    } 
 
    echo "{\"uservalid\":\"$uservalid\", \"emailvalid\":\"$emailvalid\"}";
-
-   if ($uservalid && $emailvalid) {
-      $_SESSION["dq4r1"] = getUserId($username, $db);
-      ob_clean();
-      header("Location: home.php");
-      exit();
-   }
 ?> 

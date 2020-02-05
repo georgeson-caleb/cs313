@@ -18,17 +18,15 @@
       #something is wrong. there should only be 1
    } else if (count($userInfo) == 0) {
       # Invalid username
-      echo "no";
+      echo false;
    } else {
       # check the password
       if (password_verify($password, $userInfo[0]["pass"])) {
         $_SESSION["dq4r1"] = $userInfo[0]["id"];
-         ob_clean();
-         header('Location: https://fast-eyrie-52386.herokuapp.com/catscratch/home.php');
-         exit();
+         echo true;
       } else {
          # send password error message
-         echo "no";
+         echo false;
       }
    }
    
