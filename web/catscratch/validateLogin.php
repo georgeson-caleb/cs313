@@ -24,7 +24,7 @@
       if (password_verify($password, $userInfo[0]["pass"])) {
         $_SESSION["dq4r1"] = $userInfo[0]["id"];
          ob_clean();
-         header("Location: home.php");
+         header("Location: https://fast-eyrie-52386.herokuapp.com/catscratch/home.php");
          exit();
       } else {
          # send password error message
