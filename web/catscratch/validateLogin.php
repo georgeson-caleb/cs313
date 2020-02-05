@@ -25,7 +25,7 @@
    } else {
       # check the password
       if (password_verify($password, $hash[0]["pass"])) {
-         $_SESSION["dq4r1"] = getUserId($username);
+        $_SESSION["dq4r1"] = getUserId($username, $db);
          ob_clean();
          header("Location: home.php");
          exit();
