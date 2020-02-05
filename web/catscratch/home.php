@@ -1,1 +1,3 @@
-<h1>Logged in</h1>
+<?php
+   echo "logged in";
+?>
