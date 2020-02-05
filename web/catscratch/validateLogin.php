@@ -14,9 +14,9 @@
 
    $userInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   if (count($hash) > 1) {
+   if (count($userInfo) > 1) {
       #something is wrong. there should only be 1
-   } else if (count($hash) == 0) {
+   } else if (count($userInfo) == 0) {
       # Invalid username
       echo "no";
    } else {
