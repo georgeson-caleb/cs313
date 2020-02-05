@@ -9,14 +9,14 @@
    $stmt->bindValue(":username", $username, PDO::PARAM_STR);
    $stmt->execute();
 
-   $hash = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-   foreach ($hash as $tater) {
-      echo $tater;
+   while ($hash = $stmt->fetch(PDO::FETCH_ASSOC)) {
+      echo $hash;
    }
 
+   
    //echo(password_verify($password[0], $hash));
 
+   /*
    if (count($hash) > 1) {
       #something is wrong. there should only be 1
    } else if (count($hash) == 0) {
@@ -31,5 +31,6 @@
          echo "invalid";
       }
    }
+   */
    
 ?>
