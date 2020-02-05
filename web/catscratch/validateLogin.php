@@ -10,7 +10,7 @@
    $stmt->execute();
 
    while ($hash = $stmt->fetch(PDO::FETCH_ASSOC)) {
-      echo $hash;
+      echo json_encode($hash);
    }
 
    
