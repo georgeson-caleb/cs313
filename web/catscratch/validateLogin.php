@@ -1,6 +1,9 @@
 <?php 
    require("dbConnect.php");
    require("getUserId.php");
+
+   session_start(); 
+
    $db = get_db();
 
    $username = strip_tags($_POST["username"]);
@@ -22,7 +25,7 @@
    } else {
       # check the password
       if (password_verify($password, $hash[0]["pass"])) {
-         $_SESSION("dq4r1") = getUserId($username);
+         $_SESSION["dq4r1"] = getUserId($username);
          ob_clean();
          header("Location: home.php");
          exit();
