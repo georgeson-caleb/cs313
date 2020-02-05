@@ -100,6 +100,6 @@ function login() {
 }
 
 function processLogin(response) {
-   console.log(response);
+   //console.log(response);
 }
 
