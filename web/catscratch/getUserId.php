@@ -7,6 +7,8 @@
       $stmt->bindValues(':username', $username, PDO::PARAM_STR);
       $stmt->execute();
 
-      return $stmt->fetch(PDO::FETCH_ASSOC)["id"];
+      $id = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      return $id["id"];
    }
 ?>
