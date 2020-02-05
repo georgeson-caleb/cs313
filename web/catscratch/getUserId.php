@@ -1,5 +1,5 @@
 <?php 
-   require("dbConnect.php")
+   require("dbConnect.php");
    function getUserId($username) {
       $db = get_db();
 
