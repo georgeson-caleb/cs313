@@ -11,6 +11,8 @@
 
    $hash = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+   echo json_encode($hash);
+
    if (count($hash) > 1) {
       #something is wrong. there should only be 1
    } else if (count($hash) == 0) {
