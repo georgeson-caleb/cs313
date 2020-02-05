@@ -9,7 +9,7 @@
    $stmt->bindValue(":username", $username, PDO::PARAM_STR);
    $stmt->execute();
 
-   $hash = stmt->fetchAll(PDO::FETCH_ASSOC);
+   $hash = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
    if (count($hash) > 1) {
       #something is wrong. there should only be 1
