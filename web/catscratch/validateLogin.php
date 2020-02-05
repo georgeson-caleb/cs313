@@ -9,14 +9,8 @@
    $stmt->bindValue(":username", $username, PDO::PARAM_STR);
    $stmt->execute();
 
-   while ($hash = $stmt->fetch(PDO::FETCH_ASSOC)) {
-      echo json_encode($hash);
-   }
+   $hash = stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   
-   //echo(password_verify($password[0], $hash));
-
-   /*
    if (count($hash) > 1) {
       #something is wrong. there should only be 1
    } else if (count($hash) == 0) {
@@ -24,13 +18,12 @@
       echo "something wrong";
    } else {
       # check the password
-      if (password_verify($password, $hash)) {
+      if (password_verify($password, $hash["pass"])) {
          echo "logging in...";
       } else {
          # send password error message
          echo "invalid";
       }
    }
-   */
    
 ?>
