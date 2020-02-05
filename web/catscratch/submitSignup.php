@@ -1,5 +1,9 @@
 <?php 
    require("dbConnect.php");
+   require("getUserId.php");
+
+   session_start();
+
    $db = get_db();
 
    $username = strip_tags($_POST["username"]);
@@ -47,4 +51,11 @@
    } 
 
    echo "{\"uservalid\":\"$uservalid\", \"emailvalid\":\"$emailvalid\"}";
+
+   if ($uservalid && $emailvalid) {
+      $_SESSION["dq4r1"] = getUserId($username);
+      ob_clean();
+      header("Location: home.php");
+      exit();
+   }
 ?> 
