@@ -11,7 +11,9 @@
 
    $hash = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   echo $hash;
+   foreach ($hash as $tater) {
+      echo $tater;
+   }
 
    //echo(password_verify($password[0], $hash));
 
