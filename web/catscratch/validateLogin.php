@@ -24,7 +24,7 @@
          echo "logging in...";
       } else {
          # send password error message
-         echo "invalid credentials";
+         echo "invalid";
       }
    }
    
