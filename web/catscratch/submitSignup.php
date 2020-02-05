@@ -42,7 +42,7 @@
       $stmt = $db->prepare($query);
       $stmt->bindValue(':username', $username, PDO::PARAM_STR);
       $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-      $stmt->bindValue(':tater', $tater, PDO::PARAM_STR);   
+      $stmt->bindValue(':tater', $password, PDO::PARAM_STR);   
       $stmt->execute();
    } 
 
