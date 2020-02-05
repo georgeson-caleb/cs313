@@ -1,6 +1,5 @@
 <?php
    session_start();
-   echo "logged in";
 ?>
 
 <!DOCTYPE html>
