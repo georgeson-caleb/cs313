@@ -107,3 +107,30 @@ function processLogin(success) {
    }
 }
 
+
+// Based on code found here: https://stackoverflow.com/questions/19617996/file-upload-without-form
+function uploadImg() {
+   var pictureInput = document.getElementById("image");
+
+   var myFormData = new FormData();
+   myFormData.append('image', pictureInput.files[0]);
+
+   var response = '';
+
+   $.ajax({
+      url: 'upload.php',
+      type: 'POST',
+      processData: false, // important
+      contentType: false, // important
+      dataType : 'json',
+      data: myFormData , 
+      success : function(text) {
+         response = text;
+      }
+   });
+
+   document.getElementById("add-image").innerHTML += response;
+}
+
+
+
