@@ -42,7 +42,7 @@
       if (move_uploaded_file($_FILES["file"]["tmp_name"], $path)) {
          echo "File upload successful!";
       } else {
-         echo "There was an error uploading the file."
+         echo "There was an error uploading the file.";
       }
    } else {
       echo "The file was not uploaded.";
