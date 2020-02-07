@@ -56,7 +56,7 @@
       <h1>Catscratch</h1>
    </header>
    <div id="add-image" class="w-75 mx-auto border rounded">
-      <form action="upload.php">
+      <form action="upload.php" method="post">
          <input type="file" name="image" id="image" accept="image/*">
          <input type="submit" value="Upload Image" name="submit">
       </form>
