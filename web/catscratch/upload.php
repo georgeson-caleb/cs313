@@ -15,7 +15,7 @@
       mkdir($path);
    }
 
-   $filename = basename($_FILES["file"]["name"]);
+   $filename = $path . basename($_FILES["file"]["name"]);
 
    $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
 
