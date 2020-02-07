@@ -5,9 +5,9 @@
    $path = "img/";
 
    if ($_SESSION["dq4r1"] == "") {
-      $path += "unknown/";
+      $path .= "unknown/";
    } else {
-      $path += $_SESSION["dq4r1"] . "/";
+      $path .= $_SESSION["dq4r1"] . "/";
    }
 
    echo $path . "<br>";
@@ -17,7 +17,7 @@
       mkdir($path);
    }
 
-   $filename = $path . basename($_FILES["file"]["name"]);
+   $filename = $path . basename($_FILES["image"]["name"]);
    echo $filename . "<br>";
 
    $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
