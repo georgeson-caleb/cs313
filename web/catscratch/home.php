@@ -16,7 +16,7 @@
 
       $stmt = $db->prepare($query);
       $stmt->bindValue(":id", 8, PDO::PARAM_INT);
-      $stmt->execute;
+      $stmt->execute();
 
       $username = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -27,7 +27,7 @@
 
       $stmt = $db->prepare($query);
       $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
-      $stmt->execute;
+      $stmt->execute();
 
       $cats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
