@@ -5,7 +5,9 @@
    session_start();
    if ($_SESSION["dq4r1"] == "") {
       // Not logged in
+      echo "not logged in";
    } else {
+      echo $_SESSION["dq4r1"] . "<br>";
 
       // Get the username
       $query = "SELECT username FROM users WHERE id=:id LIMIT 1;";
@@ -15,6 +17,8 @@
       $stmt->execute;
 
       $username = $stmt->fetch(PDO::FETCH_ASSOC)["username"];
+
+      echo $username . "</br>";
 
       // Get the ids of any cats associated with the user id
       $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id";
@@ -36,6 +40,8 @@
          $stmt->execute();
          array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
       }
+
+      echo json_encode($pictures);
 
    }
 ?>
