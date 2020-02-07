@@ -23,7 +23,7 @@
       echo ($username . "</br>");
 
       // Get the ids of any cats associated with the user id
-      $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id";
+      $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id;";
 
       $stmt = $db->prepare($query);
       $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
@@ -34,7 +34,7 @@
       echo json_encode($cats);
 
       // Get the pictures associated with each of the cats
-      $query = "SELECT image_name FROM pictures WHERE cat_id=:id";
+      $query = "SELECT image_name FROM pictures WHERE cat_id=:id;";
       $stmt = $db->prepare($query);
       $pictures = array(1);
       foreach ($cats as $cat) {
