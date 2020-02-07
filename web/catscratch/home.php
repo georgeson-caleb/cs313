@@ -55,6 +55,12 @@
    <header id="top">
       <h1>Catscratch</h1>
    </header>
+   <div id="add-image" class="w-75 mx-auto border rounded">
+      <form action="upload.php">
+         <input type="file" name="image" accept="image/*">
+         <input type="submit" value="Upload Image" name="submit">
+      </form>
+   </div>
    <div id="image-column" class="w-75 mx-auto">
    </div>
 </body>
