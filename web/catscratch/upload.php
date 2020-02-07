@@ -33,7 +33,7 @@
    // Check if the file is a correct file type
    if ($imageFileType != ".jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
    && $imageFileType != "gif") {
-      echo "Wrong file type.";
+      echo "Wrong file type: " . $imageFileType;
       $uploadOk = false;
    }
 
