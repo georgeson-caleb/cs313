@@ -56,16 +56,6 @@
       <h1>Catscratch</h1>
    </header>
    <div id="image-column" class="w-75 mx-auto">
-   <?php
-      $query = "SELECT image_name FROM pictures;";
-      $stmt = $db->prepare($query);
-      $stmt->execute();
-
-      while ($image = $stmt->fetch(PDO::FETCH_ASSOC)) {
-         $image_name = $image["image_name"];
-         echo "<img src=$image_name class='img-fluid'>";
-      }
-   ?>
    </div>
 </body>
 </html>
