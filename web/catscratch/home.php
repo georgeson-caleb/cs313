@@ -1,7 +1,7 @@
 <?php
    require("dbConnect.php");
    $db = get_db();
-   /*
+   
    session_start();
    if ($_SESSION["dq4r1"] == "") {
       // Not logged in
@@ -37,7 +37,7 @@
          array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
       }
 
-   }*/
+   }
 ?>
 
 <!DOCTYPE html>
