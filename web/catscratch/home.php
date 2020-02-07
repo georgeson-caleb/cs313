@@ -20,7 +20,7 @@
 
       $username = $stmt->fetch(PDO::FETCH_ASSOC)["username"];
 
-      echo $username . "</br>";
+      echo ($username . "</br>");
 
       // Get the ids of any cats associated with the user id
       $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id";
@@ -43,7 +43,7 @@
          array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
       }
 
-      echo json_encode($pictures)
+      echo json_encode($pictures);
 
    }
 ?>
