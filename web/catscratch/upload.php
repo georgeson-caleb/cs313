@@ -2,6 +2,7 @@
 
    session_start();
 
+   echo $_SESSION["dq4r1"] . "<br>";
    $path = "img/";
 
    if ($_SESSION["dq4r1"] == "") {
@@ -26,7 +27,7 @@
 
    // Check if the file is an image
    if (isset($_POST["submit"])) {
-      $check = getimagesize($_FILES["file"]["tmp_name"]);
+      $check = getimagesize($_FILES["image"]["tmp_name"]);
       if ($check === false) {
          $uploadOk = false;
          echo "File not an image.";
@@ -42,8 +43,8 @@
 
 
    if ($uploadOk) {
-      if (move_uploaded_file($_FILES["file"]["tmp_name"], $path)) {
-         echo "File upload successful!";
+      if (move_uploaded_file($_FILES["image"]["tmp_name"], $filename)) {
+         echo "File upload successful! <img src=$filename class='img-fluid w-25'>";
       } else {
          echo "There was an error uploading the file.";
       }
