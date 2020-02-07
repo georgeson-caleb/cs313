@@ -11,7 +11,7 @@
       $query = "SELECT username FROM users WHERE id=:id LIMIT 1;";
 
       $stmt = $db->prepare($query);
-      $stmt->bindValues(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
+      $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
       $stmt->execute;
 
       $username = $stmt->fetch(PDO::FETCH_ASSOC)["username"];
@@ -20,7 +20,7 @@
       $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id";
 
       $stmt = $db->prepare($query);
-      $stmt->bindValues(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
+      $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
       $stmt->execute;
 
       $cats = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -32,7 +32,7 @@
       $stmt = $db->prepare($query);
       $pictures = array(1);
       foreach ($cats as $cat) {
-         $stmt->bindValues(":id", $cat["id"], PDO::PARAM_INT);
+         $stmt->bindValue(":id", $cat["id"], PDO::PARAM_INT);
          $stmt->execute();
          array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
       }
