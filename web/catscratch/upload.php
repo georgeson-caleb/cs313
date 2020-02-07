@@ -18,7 +18,9 @@
       mkdir($path);
    }
 
-   $filename = $path . $_FILES["image"]["tmp_name"];
+   echo json_encode($_FILE);
+
+   $filename = $path . basename($_FILES["image"]["name"]);
    echo $filename . "<br>";
 
    $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
