@@ -9,13 +9,11 @@
    } else {
       echo $_SESSION["dq4r1"] . "<br>";
 
-      $id = $_SESSION["dq4r1"];
-
       // Get the username
       $query = "SELECT username FROM users WHERE id=:id LIMIT 1;";
 
       $stmt = $db->prepare($query);
-      $stmt->bindValue(":id", 8, PDO::PARAM_INT);
+      $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
       $stmt->execute();
 
       $username = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -36,7 +34,8 @@
       // Get the pictures associated with each of the cats
       $query = "SELECT image_name FROM pictures WHERE cat_id=:id;";
       $stmt = $db->prepare($query);
-      $pictures = array(1);
+      $pictures = array();
+      
       foreach ($cats as $cat) {
          $stmt->bindValue(":id", $cat["id"], PDO::PARAM_INT);
          $stmt->execute();
@@ -70,6 +69,12 @@
    -->
    </div>
    <div id="image-column" class="w-75 mx-auto">
+      <?php
+
+         foreach ( $pictures as $picture ) {
+            echo "<img src=$picture class='img-fluid'>";
+         }
+      ?>
    </div>
 </body>
 </html>
