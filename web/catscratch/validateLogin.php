@@ -7,16 +7,14 @@
 
    $username = strip_tags($_POST["username"]);
    $password = strip_tags($_POST["password"]);
-   $query = "SELECT pass, id FROM users WHERE username=:username";
+   $query = "SELECT pass, id FROM users WHERE username=:username LIMIT 1";
    $stmt = $db->prepare($query);
    $stmt->bindValue(":username", $username, PDO::PARAM_STR);
    $stmt->execute();
 
    $userInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   if (count($userInfo) > 1) {
-      #something is wrong. there should only be 1
-   } else if (count($userInfo) == 0) {
+   if (count($userInfo) == 0) {
       # Invalid username
       echo false;
    } else {
@@ -25,7 +23,7 @@
         $_SESSION["dq4r1"] = $userInfo[0]["id"];
          echo true;
       } else {
-         # send password error message
+         # Invalid password
          echo false;
       }
    }
