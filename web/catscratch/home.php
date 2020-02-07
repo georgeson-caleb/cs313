@@ -57,7 +57,8 @@
    </header>
    <div id="add-image" class="w-75 mx-auto border rounded">
       <input type="file" name="image" id="image" accept="image/*">
-      <input type="submit" value="Upload Image" name="submit">
+      <button type="button" onclick="uploadImg()">Upload</button>
+      
    </div>
    <div id="image-column" class="w-75 mx-auto">
    </div>

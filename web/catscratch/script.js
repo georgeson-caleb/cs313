@@ -128,7 +128,8 @@ function uploadImg() {
          response = text;
       }
    });
-
+   
+   console.log(response);
    document.getElementById("add-image").innerHTML += response;
 }
 
