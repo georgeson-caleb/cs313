@@ -18,9 +18,9 @@
       $stmt->bindValue(":id", $id, PDO::PARAM_INT);
       $stmt->execute;
 
-      $username = $stmt->fetch(PDO::FETCH_ASSOC);
+      $username = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      echo ($username . "</br>");
+      echo (json_encode[$username] . "</br>");
 
       // Get the ids of any cats associated with the user id
       $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id;";
