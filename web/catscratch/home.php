@@ -30,7 +30,7 @@
       // Get the pictures associated with each of the cats
       $query = "SELECT image_name FROM pictures WHERE cat_id=:id";
       $stmt = $db->prepare($query);
-      $pictures;
+      $pictures = array(1);
       foreach ($cats as $cat) {
          $stmt->bindValues(":id", $cat["id"], PDO::PARAM_INT);
          $stmt->execute();
