@@ -124,10 +124,13 @@ function uploadImg() {
       contentType: false, // important
       dataType : 'json',
       data: myFormData , 
-      success : function(text) {
+      done : function(text) {
          response = text;
          console.log(response);
       document.getElementById("add-image").innerHTML += response;
+      } , 
+      fail : function() {
+         console.log("something went wrong");
       }
    });
 }
