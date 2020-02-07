@@ -126,11 +126,10 @@ function uploadImg() {
       data: myFormData , 
       success : function(text) {
          response = text;
+         console.log(response);
+      document.getElementById("add-image").innerHTML += response;
       }
    });
-   
-   console.log(response);
-   document.getElementById("add-image").innerHTML += response;
 }
 
 
