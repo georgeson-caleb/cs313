@@ -10,12 +10,15 @@
       $path += $_SESSION["dq4r1"] . "/";
    }
 
+   echo $path . "<br>";
+
    // Check if the path exists. If not, create it
    if (!is_dir($path)) {
       mkdir($path);
    }
 
    $filename = $path . basename($_FILES["file"]["name"]);
+   echo $filename . "<br>";
 
    $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
 
