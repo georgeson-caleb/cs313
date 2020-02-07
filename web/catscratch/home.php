@@ -9,11 +9,13 @@
    } else {
       echo $_SESSION["dq4r1"] . "<br>";
 
+      $id = $_SESSION["dq4r1"];
+
       // Get the username
       $query = "SELECT username FROM users WHERE id=:id LIMIT 1;";
 
       $stmt = $db->prepare($query);
-      $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
+      $stmt->bindValue(":id", $id, PDO::PARAM_INT);
       $stmt->execute;
 
       $username = $stmt->fetch(PDO::FETCH_ASSOC)["username"];
@@ -41,7 +43,7 @@
          array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
       }
 
-      echo json_encode($pictures);
+      echo json_encode($pictures)
 
    }
 ?>
@@ -61,10 +63,11 @@
    <header id="top">
       <h1>Catscratch</h1>
    </header>
-   <div id="add-image" class="w-75 mx-auto border rounded">
+   <!--
+      <div id="add-image" class="w-75 mx-auto border rounded">
       <input type="file" name="image" id="image" accept="image/*">
       <button type="button" onclick="uploadImg()">Upload</button>
-      
+   -->
    </div>
    <div id="image-column" class="w-75 mx-auto">
    </div>
