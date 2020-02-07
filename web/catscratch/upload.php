@@ -18,7 +18,7 @@
       mkdir($path);
    }
 
-   echo json_encode($_FILE);
+   echo json_encode($_FILES);
 
    $filename = $path . basename($_FILES["image"]["name"]);
    echo $filename . "<br>";
