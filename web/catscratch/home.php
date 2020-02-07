@@ -1,7 +1,7 @@
 <?php
    require("dbConnect.php");
    $db = get_db();
-   
+   /*
    session_start();
    if ($_SESSION["dq4r1"] == "") {
       // Not logged in
@@ -37,7 +37,7 @@
          array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
       }
 
-   }
+   }*/
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@
    </header>
    <div id="add-image" class="w-75 mx-auto border rounded">
       <form action="upload.php">
-         <input type="file" name="image" /*accept="image/*"*/>
+         <input type="file" name="image" accept="image/*">
          <input type="submit" value="Upload Image" name="submit">
       </form>
    </div>
