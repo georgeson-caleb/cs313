@@ -72,8 +72,8 @@
       <?php
 
          foreach ( $pictures as $picture ) {
-            $image = $picture["image_name"];
-            echo "<img src=$image class='img-fluid'>";
+            $image = $picture[0]["image_name"];
+            echo "<img src='$image' class='img-fluid'>";
          }
       ?>
    </div>
