@@ -15,7 +15,7 @@
       $query = "SELECT username FROM users WHERE id=:id LIMIT 1;";
 
       $stmt = $db->prepare($query);
-      $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+      $stmt->bindValue(":id", 8, PDO::PARAM_INT);
       $stmt->execute;
 
       $username = $stmt->fetchAll(PDO::FETCH_ASSOC);
