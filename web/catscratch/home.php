@@ -78,7 +78,8 @@
       <button type="button" onclick="uploadImg()">Upload</button>
    -->
    </div>
-   <div id="image-box" class="d-flex flex-wrap w-75 mx-auto p-2 border rounded">
+   <div id="image-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
+   <input type="text" id="searchBox" onchange="checkPics()">
       <?php
          foreach ($pictures as $picture) {
             $image = $picture[0]["image_name"];
