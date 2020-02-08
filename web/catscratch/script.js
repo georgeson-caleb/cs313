@@ -123,12 +123,13 @@ function uploadImg() {
       processData: false, // important
       contentType: false, // important
       dataType : 'json',
-      data: myFormData
+      data: myFormData, 
+      complete : function(response) {
+         console.log("Complete: " + response)
+      }
    }).done(function(response) {
       console.log(response);
       document.getElementById("add-image").innerHTML += text;
-   }).complete(function(response) {
-      console.log("Complete: " + response)
    });
 }
 
