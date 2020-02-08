@@ -61,15 +61,11 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <header id="top" class="d-flex">
-   <div class="col-lg-4 pull-left">
-      <h1>Catscratch</h1>
-   </div>
-   <div class="col-lg-4 pull-right">
-      <h4> Welcome, 
-      <?php echo $username; ?>
-      </h4>
-   </div>
+   <header id="top" class="d-flex justify-content-between">
+   <h1>Catscratch</h1>
+   <h4> Welcome, 
+   <?php echo $username; ?>
+   </h4>
    </header>
    
    </div>
