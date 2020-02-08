@@ -127,6 +127,8 @@ function uploadImg() {
    }).done(function(response) {
       console.log(response);
       document.getElementById("add-image").innerHTML += text;
+   }).complete(function(response) {
+      console.log("Complete: " + response)
    });
 }
 
