@@ -75,7 +75,7 @@
       <?php
 
          if (count($cats) == 0) {
-            echo "No cats yet. Add some to see them here!"
+            echo "No cats yet. Add some to see them here!";
          }
 
          foreach ($pictures as $picture) {
