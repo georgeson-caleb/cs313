@@ -32,7 +32,7 @@
       echo json_encode($cats);
 
       // Get the pictures associated with each of the cats
-      $query = "SELECT image_name FROM pictures WHERE cat_id=:id;";
+      $query = "SELECT image_name, cat_id FROM pictures WHERE cat_id=:id;";
       $stmt = $db->prepare($query);
       $pictures = array();
       
@@ -44,6 +44,16 @@
 
       echo json_encode($pictures);
 
+   }
+
+   function getCatName($cat_id) {
+      global $db;
+      $query = "SELECT cat_name FROM cats WHERE id=:id;";
+      $stmt = $db->prepare($query);
+      $stmt->bindValue(":id", $cat_id, PDO::PARAM_INT);
+      $stmt->execute();
+
+      return $stmt->fetch(PDO::FETCH_ASSOC)["cat_name"];
    }
 ?>
 
@@ -68,12 +78,16 @@
       <button type="button" onclick="uploadImg()">Upload</button>
    -->
    </div>
-   <div id="image-column" class="w-75 mx-auto">
+   <div id="image-column" class="w-50 mx-auto border rounded">
       <?php
 
          foreach ( $pictures as $picture ) {
             $image = $picture[0]["image_name"];
+            $cat_name = getCatName($picture[0]["cat_id"]);
+            echo "<div class='border rounded'>";
+            echo "<h3 class='mx-auto'>$cat_name</h3>";
             echo "<img src='$image' class='img-fluid'>";
+            echo "</div>";
          }
       ?>
    </div>
