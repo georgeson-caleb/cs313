@@ -61,8 +61,11 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <header id="top">
-      <h1>Catscratch</h1>
+   <header id="top" class="d-flex">
+      <h1 class="float-left">Catscratch</h1>
+      <h4 class="float-right"> Welcome, 
+      <?php echo $username; ?>
+      </h4>
    </header>
    
    </div>
