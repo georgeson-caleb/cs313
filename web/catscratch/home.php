@@ -67,9 +67,9 @@
    </div>
    <div class="pull-right">
       <h4 class="pull-right"> Welcome, 
-   </div>
       <?php echo $username; ?>
       </h4>
+   </div>
    </header>
    
    </div>
