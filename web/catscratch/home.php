@@ -84,10 +84,10 @@
          foreach ($pictures as $picture) {
             $image = $picture[0]["image_name"];
             $cat_name = getCatName($picture[0]["cat_id"]);
-            echo "<div class='border rounded w-75 mx-auto mb-20'>";
-            echo "<h3 class='mx-auto'>$cat_name</h3>";
-            echo "<img src='$image' class='img-fluid'>";
-            echo "</div>";
+            echo "<div class='border rounded w-25 mx-auto mb-3'>" .
+                 "<h3 class='text-center'>$cat_name</h3>" .
+                 "<img src='$image' class='img-fluid'>" .
+                 "</div>";
          }
       ?>
    </div>
