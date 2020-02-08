@@ -62,8 +62,8 @@
 </head>
 <body>
    <header id="top" class="d-flex">
-      <h1 class="float-left">Catscratch</h1>
-      <h4 class="float-right"> Welcome, 
+      <h1 class="pull-left">Catscratch</h1>
+      <h4 class="pull-right"> Welcome, 
       <?php echo $username; ?>
       </h4>
    </header>
