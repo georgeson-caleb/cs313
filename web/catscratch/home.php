@@ -65,12 +65,8 @@
       <h1>Catscratch</h1>
    </header>
    
-   <div id="add-image" class="w-75 mx-auto border rounded">
-   <input type="file" name="image" id="image" accept="image/*">
-   <button type="button" onclick="uploadImg()">Upload</button>
-   
    </div>
-   <div id="image-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
+   <div id="info-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
    <h3 class="text-center">Your Cats</h3>
       <?php
 
@@ -86,7 +82,12 @@
                  "<img src='$image' class='img-fluid'>" .
                  "</div>";
          }
+
       ?>
+
+      <div class='border rounded w-25 mx-2 mb-3' onclick="showAddCatForm()">
+         <a href="add-cat.php"> Click to add a kitty! </a>
+      </div>
    </div>
 </body>
 </html>

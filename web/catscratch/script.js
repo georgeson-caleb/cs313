@@ -111,9 +111,11 @@ function processLogin(success) {
 // Based on code found here: https://stackoverflow.com/questions/19617996/file-upload-without-form
 function uploadImg() {
    var pictureInput = document.getElementById("image");
+   var name = document.getElementById("name").value;
 
    var myFormData = new FormData();
    myFormData.append('image', pictureInput.files[0]);
+   myFormData.append('name', name);
 
    var response = '';
 
@@ -125,13 +127,9 @@ function uploadImg() {
       dataType : 'json',
       data: myFormData, 
       complete : function(response) {
-         console.log("Complete: " + JSON.stringify(response));
+         
       }
-   }).done(function(response) {
-      console.log(response);
-      document.getElementById("add-image").innerHTML += text;
    });
 }
-
 
 
