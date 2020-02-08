@@ -78,9 +78,8 @@
       <button type="button" onclick="uploadImg()">Upload</button>
    -->
    </div>
-   <div id="image-column" class="w-75 mx-auto border rounded">
+   <div id="image-box" class="d-flex flex-wrap w-75 mx-auto border rounded">
       <?php
-
          foreach ($pictures as $picture) {
             $image = $picture[0]["image_name"];
             $cat_name = getCatName($picture[0]["cat_id"]);
