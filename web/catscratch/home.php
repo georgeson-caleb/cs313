@@ -62,11 +62,11 @@
 </head>
 <body>
    <header id="top" class="d-flex">
-   <div class="pull-left">
+   <div class="col-lg-4 pull-left">
       <h1>Catscratch</h1>
    </div>
-   <div class="pull-right">
-      <h4 class="pull-right"> Welcome, 
+   <div class="col-lg-4 pull-right">
+      <h4> Welcome, 
       <?php echo $username; ?>
       </h4>
    </div>
