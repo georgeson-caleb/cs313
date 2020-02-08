@@ -66,8 +66,8 @@
    </header>
    
    </div>
-   <div id="info-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
    <h3 class="text-center">Your Cats</h3>
+   <div id="info-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
       <?php
 
          if (count($cats) == 0) {
