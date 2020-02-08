@@ -124,8 +124,8 @@ function uploadImg() {
       contentType: false, // important
       dataType : 'json',
       data: myFormData
-   }).done(function(text) {
-      console.log(text);
+   }).done(function(response) {
+      console.log(response);
       document.getElementById("add-image").innerHTML += text;
    });
 }

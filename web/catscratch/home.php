@@ -7,7 +7,6 @@
       // Not logged in
       echo "not logged in";
    } else {
-      echo $_SESSION["dq4r1"] . "<br>";
 
       // Get the username
       $query = "SELECT username FROM users WHERE id=:id LIMIT 1;";
@@ -18,8 +17,6 @@
 
       $username = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      echo json_encode($username) . "</br>";
-
       // Get the ids of any cats associated with the user id
       $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id;";
 
@@ -28,8 +25,6 @@
       $stmt->execute();
 
       $cats = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-      echo json_encode($cats);
 
       // Get the pictures associated with each of the cats
       $query = "SELECT image_name, cat_id FROM pictures WHERE cat_id=:id;";
@@ -41,9 +36,6 @@
          $stmt->execute();
          array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
       }
-
-      echo json_encode($pictures);
-
    }
 
    function getCatName($cat_id) {
@@ -72,15 +64,20 @@
    <header id="top">
       <h1>Catscratch</h1>
    </header>
-   <!--
-      <div id="add-image" class="w-75 mx-auto border rounded">
-      <input type="file" name="image" id="image" accept="image/*">
-      <button type="button" onclick="uploadImg()">Upload</button>
-   -->
+   
+   <div id="add-image" class="w-75 mx-auto border rounded">
+   <input type="file" name="image" id="image" accept="image/*">
+   <button type="button" onclick="uploadImg()">Upload</button>
+   
    </div>
    <div id="image-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
-   <input type="text" id="searchBox" onchange="checkPics()">
+   <h3 class="text-center">Your Cats</h3>
       <?php
+
+         if (count($cats) == 0) {
+            echo "No cats yet. Add some to see them here!"
+         }
+
          foreach ($pictures as $picture) {
             $image = $picture[0]["image_name"];
             $cat_name = getCatName($picture[0]["cat_id"]);
