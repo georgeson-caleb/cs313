@@ -125,7 +125,7 @@ function uploadImg() {
       dataType : 'json',
       data: myFormData, 
       complete : function(response) {
-         console.log("Complete: " + response)
+         console.log("Complete: " + JSON.stringify(response));
       }
    }).done(function(response) {
       console.log(response);
