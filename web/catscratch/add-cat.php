@@ -36,7 +36,7 @@
       <input type="number" id="age">
       <label for="image">Picture:</label>
       <input type="file" accept="image/*" id="image">
-      <image src="#" class="d-none">
+      <image id="image-preview" src="#" class="d-none">
       <button type="button" onclick="uploadImg()">Submit</button>
    </div>
    <div id="response"></div>
