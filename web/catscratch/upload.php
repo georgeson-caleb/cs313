@@ -1,5 +1,7 @@
 <?php
 
+   require(dbConnect.php);
+   
    session_start();
 
    echo $_SESSION["dq4r1"] . "<br>";
