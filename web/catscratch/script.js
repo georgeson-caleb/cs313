@@ -117,8 +117,6 @@ function uploadImg() {
    myFormData.append('image', pictureInput.files[0]);
    myFormData.append('name', name);
 
-   var response = '';
-
    $.ajax({
       url: 'upload.php',
       type: 'POST',
@@ -127,7 +125,7 @@ function uploadImg() {
       dataType : 'json',
       data: myFormData, 
       complete : function(response) {
-         
+         document.getElementById("response").innerHTML = response;
       }
    });
 }

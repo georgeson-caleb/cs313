@@ -30,12 +30,10 @@
    </div>
    <h3 class="text-center">Add a cat</h3>
    <div id="info-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
-   In progress...
-   <!--
       <input type="text" placeholder="Name" id="name">
       <input type="file" accept="image/*" id="image">
       <button type="button" onclick="uploadImg()">Submit</button>
-   -->
    </div>
+   <div id="response"></div>
 </body>
 </html>
