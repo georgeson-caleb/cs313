@@ -145,7 +145,7 @@ function readURL(input) {
    }
  }
  
- $("#imgInp").change(function() {
+ $("#image").change(function() {
    readURL(this);
  });
 
