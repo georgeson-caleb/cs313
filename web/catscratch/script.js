@@ -112,10 +112,12 @@ function processLogin(success) {
 function uploadImg() {
    var pictureInput = document.getElementById("image");
    var name = document.getElementById("name").value;
-
+   var age = document.getElementById("age").value;
+   
    var myFormData = new FormData();
    myFormData.append('image', pictureInput.files[0]);
    myFormData.append('name', name);
+   myFormData.append('age', age);
 
    $.ajax({
       url: 'upload.php',

@@ -17,11 +17,8 @@
    if (!is_dir($path)) {
       mkdir($path);
    }
-
-   echo json_encode($_FILES);
  
    $filename = $path . basename($_FILES["image"]["name"]);
-   echo $filename . "<br>";
 
    $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
 
@@ -46,7 +43,26 @@
 
    if ($uploadOk) {
       if (move_uploaded_file($_FILES["image"]["tmp_name"], $filename)) {
+
          echo "File upload successful! <img src=$filename class='img-fluid w-25'>";
+         $cat_name = strip_tags($_POST["name"]);
+         $age = strip_tags($_POST["age"]);
+         $db = get_db();
+         $query = "INSERT INTO cats (cat_name, age, owner_id) VALUES (:cat_name, :age, :id);";
+         $stmt = $db->prepare($query);
+         $stmt->bindValue(":cat_name", $cat_name, PDO::PARAM_STR);
+         $stmt->bindValue(":age", $age, PDO::PARAM_INT);
+         $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
+         $stmt->execute();
+
+         $cat_id = $db->lastInsertId();
+
+         $query = "INSERT INTO pictures (image_name, cat_id) VALUES (:image_name, :cat_id);";
+         $stmt = $db->prepare($query);
+         $stmt->bindValue(":image_name", $filename, PDO::PARAM_STR);
+         $stmt->bindValue(":cat_id", $cat_id, PDO::PARAM_INT);
+         $stmt->execute();
+
       } else {
          echo "There was an error uploading the file.";
       }
