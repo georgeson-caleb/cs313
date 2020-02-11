@@ -132,4 +132,21 @@ function uploadImg() {
    });
 }
 
+function readURL(input) {
+   if (input.files && input.files[0]) {
+     var reader = new FileReader();
+     
+     reader.onload = function(e) {
+       $('#image-preview').attr('src', e.target.result);
+       $('#image-preview').attr('class', 'd-block');
+     }
+     
+     reader.readAsDataURL(input.files[0]);
+   }
+ }
+ 
+ $("#imgInp").change(function() {
+   readURL(this);
+ });
+
 
