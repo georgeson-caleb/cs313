@@ -125,7 +125,7 @@ function uploadImg() {
       dataType : 'json',
       data: myFormData, 
       complete : function(response) {
-         document.getElementById("response").innerHTML = json_decode(response);
+         document.getElementById("response").innerHTML = JSON.stringify(response);
       }
    });
 }
