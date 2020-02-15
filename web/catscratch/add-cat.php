@@ -31,15 +31,15 @@
    <h3 class="text-center">Add a cat</h3>
    <div id="info-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
       <label for="name">Cat's name:</label>
-      <input type="text" id="name">
+      <input type="text" id="name"></br>
       <label for="age">Age (years):</label>
-      <input type="number" id="age">
+      <input type="number" id="age"></br>
       <label for="image">Picture:</label>
-      <input type="file" accept="image/*" id="image">
+      <input type="file" accept="image/*" id="image"></br>
       <label for="fav_food">Favorite food:</label>
-      <input type="text" id="fav_food">
+      <input type="text" id="fav_food"></br>
       <label for="fav_pastime">Favorite pastime:</label>
-      <input type="text" id="fav_pastime">
+      <input type="text" id="fav_pastime"></br>
       <button type="button" onclick="uploadImg()">Submit</button>
    </div>
    <div id="response"></div>
