@@ -113,11 +113,15 @@ function uploadImg() {
    var pictureInput = document.getElementById("image");
    var name = document.getElementById("name").value;
    var age = document.getElementById("age").value;
+   var fav_food = document.getElementById("fav_food").value;
+   var fav_pastime = document.getElementById("fav_pastime").value;
    
    var myFormData = new FormData();
    myFormData.append('image', pictureInput.files[0]);
    myFormData.append('name', name);
    myFormData.append('age', age);
+   myFormData.append('food', fav_food);
+   myFormData.append('pastime', fav_pastime);
 
    $.ajax({
       url: 'upload.php',
@@ -131,22 +135,5 @@ function uploadImg() {
       }
    });
 }
-
-function readURL(input) {
-   if (input.files && input.files[0]) {
-     var reader = new FileReader();
-     
-     reader.onload = function(e) {
-       $('#image-preview').attr('src', e.target.result);
-       $('#image-preview').attr('class', 'd-block');
-     }
-     
-     reader.readAsDataURL(input.files[0]);
-   }
- }
- 
- $("#image").change(function() {
-   readURL(this);
- });
 
 

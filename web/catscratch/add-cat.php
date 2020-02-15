@@ -36,7 +36,10 @@
       <input type="number" id="age">
       <label for="image">Picture:</label>
       <input type="file" accept="image/*" id="image">
-      <image id="image-preview" src="#" class="d-none">
+      <label for="fav_food">Favorite food:</label>
+      <input type="text" id="fav_food">
+      <label for="fav_pastime">Favorite pastime:</label>
+      <input type="text" id="fav_pastime">
       <button type="button" onclick="uploadImg()">Submit</button>
    </div>
    <div id="response"></div>
