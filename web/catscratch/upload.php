@@ -1,6 +1,6 @@
 <?php
 
-   require("dbConnect.php"SELECT);
+   require("dbConnect.php");
 
    session_start();
 
@@ -46,7 +46,7 @@
    if ($uploadOk) {
       if (move_uploaded_file($_FILES["image"]["tmp_name"], $filename)) {
 
-         echo "File upload successful! <img src=$filename class='img-fluid w-25'>";
+         echo "File upload successful!  src=$filename class='img-fluid w-25'>";
          $cat_name = strip_tags($_POST["name"]);
          $fav_food = strip_tags($_POST["food"]);
          $fav_pastime = strip_tags($_POST["pastime"]);
