@@ -5,6 +5,11 @@
 </header>
 
 <body>
+
+    <?php
+        session_start();
+    ?>
+
     <h1>Sign Up Here</h1>
 
     <a href="sign_in.php">Sign In</a>
