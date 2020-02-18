@@ -18,7 +18,7 @@ $password_hash = $row["password"];
 if(password_verify($password, $password_hash)) {
     $_SESSION['loggedin'] = TRUE;
     $_SESSION['user_id'] = $id;
-    header('welcome.php');
+    header('Location: welcome.php');
     die();
 }
 else {
