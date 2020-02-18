@@ -40,7 +40,7 @@ else {
 function checkExistingUsername($username){
     $db = get_db();
     $query = "SELECT username FROM users_team WHERE username = (:username)";
-    $stmt = $db->prepare($sql);
+    $stmt = $db->prepare($query);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);  
     $stmt->execute();
     $rowsChanged = $stmt->rowCount();
@@ -64,7 +64,7 @@ function addUser($username, $password) {
 function getUserId($username) {
     $db = get_db();
     $query = "SELECT user_id FROM users_team WHERE username = (:username)";
-    $stmt = $db->prepare($sql);
+    $stmt = $db->prepare($query);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $stmt->execute();
     $stmt->closeCursor();
