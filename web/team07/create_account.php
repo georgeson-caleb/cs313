@@ -23,8 +23,9 @@ if($password != $passwordVerify) {
     header("location: sign_up.php");
 }*/
 
-
-if(addUser($username, $hashed_pass) > 0 ) {
+$num = addUser($username, $hashed_pass);
+var_dump($num);
+if($num > 0 ) {
     $_SESSION['userId'] = getUserId($username);
     $_SESSION['username'] = $username;
     header("location: welcome.php");
