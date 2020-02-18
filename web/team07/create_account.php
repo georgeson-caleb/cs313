@@ -4,7 +4,6 @@ session_start();
 
 require('dbConnect.php'); 
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-$username = htmlspecialchars($username);
 
 if(checkExistingUsername($username) > 0) {
     header("location: sign_up.php");
@@ -65,7 +64,7 @@ function getUserId($username) {
     $stmt->execute();
     $stmt->closeCursor();
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $userId = $row['userId'];
+        $userId = $row['user_id'];
     }
     return $userId;
 }
