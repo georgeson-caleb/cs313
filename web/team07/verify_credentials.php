@@ -11,6 +11,7 @@ $stmt->bindValue(":username", $username, PDO::PARAM_STR);
 $stmt->execute();
 
 $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+echo(json_encode($row));
 $id = $row[0]["user_id"];
 $password_hash = $row[0]["password"];
 
