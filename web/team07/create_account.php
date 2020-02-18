@@ -52,7 +52,7 @@ function checkExistingUsername($username){
 function addUser($username, $password) {
     $db = get_db();
     $query = 'INSERT INTO users_team (username, password) VALUES (:username, :password)';
-    $stmt = $db->prepare($sql);
+    $stmt = $db->prepare($query);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $stmt->bindValue(':password', $password, PDO::PARAM_STR);
     $stmt->execute();
