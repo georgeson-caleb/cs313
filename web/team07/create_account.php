@@ -32,8 +32,8 @@ if($num > 0 ) {
     die();
 }
 else {
-    //header("location: sign_up.php");
-    //die();
+    header("location: sign_up.php");
+    die();
 }
 
 //check existing username and returns 1 if username is used
@@ -56,7 +56,8 @@ function addUser($username, $password) {
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $stmt->bindValue(':password', $password, PDO::PARAM_STR);
     $stmt->execute();
-    $rowsChanged = $stmt->rowCount();
+    //$rowsChanged = $stmt->rowCount();
+    $rowsChanged = pg_affected_rows($stmt);
     $stmt->closeCursor();
     return $rowsChanged;
 }
