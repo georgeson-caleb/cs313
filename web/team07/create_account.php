@@ -5,12 +5,12 @@ session_start();
 require('dbConnect.php'); 
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 
-/*
+
 if(checkExistingUsername($username) > 0) {
     header("location: sign_up.php");
     die();
 }
-*/
+
 
 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
@@ -34,16 +34,16 @@ else {
 }
 
 //check existing username and returns 1 if username is used
-/*function checkExistingUsername($username){
+function checkExistingUsername($username){
     $db = get_db();
     $query = "SELECT username FROM users_team WHERE username = (:username)";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);  
-    $stmt->exectue();
+    $stmt->execute();
     $rowsChanged = $stmt->rowCount();
     $stmt->closeCursor();
     return $rowsChanged;
-}*/
+}
 
 //returns 1 if successful
 function addUser($username, $password) {
