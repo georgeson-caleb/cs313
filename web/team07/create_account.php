@@ -12,11 +12,13 @@ $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 
 //check if passwords match
+/*
 $passwordVerify = filter_input(INPUT_POST, 'passwordVerify', FILTER_SANITIZE_STRING);
 if($password != $passwordVerify) {
     $warning = "<p style='color:red'>The passwords do not match</p>";
     header("location: sign_up.php");
 }
+*/
 
 if(addUser($username, $hashed_pass) > 0 ) {
     $_SESSION['userId'] = getUserId($username);
