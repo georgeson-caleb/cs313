@@ -23,12 +23,15 @@ if($password != $passwordVerify) {
     header("location: sign_up.php");
 }*/
 
-$num = addUser($username, $hashed_pass);
+addUser($username, $hashed_pass);
+header("location: sign_in.php");
+die();
+
 var_dump($num);
 if($num > 0 ) {
-    $_SESSION['userId'] = getUserId($username);
-    $_SESSION['username'] = $username;
-    header("location: welcome.php");
+    // $_SESSION['userId'] = getUserId($username);
+    // $_SESSION['username'] = $username;
+    
     die();
 }
 else {
@@ -59,7 +62,6 @@ function addUser($username, $password) {
     //$rowsChanged = $stmt->rowCount();
     $rowsChanged = pg_affected_rows($stmt);
     $stmt->closeCursor();
-    return $rowsChanged;
 }
 
 function getUserId($username) {
