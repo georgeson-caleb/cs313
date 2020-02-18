@@ -13,6 +13,7 @@ function submitInfo() {
       contentType: false,
       data: formData,
       complete : function(response) {
+         console.log("response: " + JSON.stringify(response));
          document.getElementById("error").innerHtml = response.responseText;
          document.getElementById("error").style.display = "block";
       }
