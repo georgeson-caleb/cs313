@@ -1,4 +1,5 @@
 <?php
+require('dbConnect.php'); 
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $username = htmlspecialchars($username);
 
@@ -30,7 +31,7 @@ else {
 
 //check existing username and returns 1 if username is used
 function checkExistingUsername($username){
-    $db = getdb();
+    $db = get_db();
     $query = "SELECT username FROM users_team WHERE username = (:username)";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);  
@@ -42,7 +43,7 @@ function checkExistingUsername($username){
 
 //returns 1 if successful
 function addUser($username, $password) {
-    $db = getdb();
+    $db = get_db();
     $query = "INSERT INTO users_team (username, password) VALUES (:username, :password)";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -54,7 +55,7 @@ function addUser($username, $password) {
 }
 
 function getUserId($username) {
-    $db = getdb();
+    $db = get_db();
     $query = "SELECT user_id FROM users_team WHERE username = (:username)";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
