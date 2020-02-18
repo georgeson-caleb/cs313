@@ -6,7 +6,7 @@ $db = get_db();
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-$stmt = $db->prepare("SELECT id, password FROM users_team WHERE username=:username LIMIT 1");
+$stmt = $db->prepare("SELECT user_id, password FROM users_team WHERE username=:username");
 $stmt->bindValue(":username", $username, PDO::PARAM_STR);
 $stmt->execute();
 
