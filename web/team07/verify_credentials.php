@@ -10,10 +10,9 @@ $stmt = $db->prepare("SELECT id, password FROM users_team WHERE username=:userna
 $stmt->bindValue(":username", $username, PDO::PARAM_STR);
 $stmt->execute();
 
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-echo(json_encode($row));
-$id = $row["user_id"];
-$password_hash = $row["password"];
+$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$id = $row[0]["user_id"];
+$password_hash = $row[0]["password"];
 
 if(password_verify($password, $password_hash)) {
     $_SESSION['loggedin'] = TRUE;

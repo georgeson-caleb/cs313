@@ -6,7 +6,7 @@
 <body>
     <header><h1>Welcome!</h1></header>
     <?php 
-            
+
         session_start();
 
         if(isset($_SESSION['username'])){
