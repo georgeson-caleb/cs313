@@ -10,7 +10,7 @@
     <a href="sign_in.php">Sign In</a>
     <br>
         <?php
-            if(issset($warning)) {
+            if(isset($warning)) {
                 echo $warning;
             }
         ?>
@@ -24,7 +24,7 @@
         <input type="password" id="password" name="password">
         <label for="password">Password         
             <?php
-                if(issset($warning)) {
+                if(isset($warning)) {
                     echo "<span style='color:red'>*</span>";
                 }
             ?>
@@ -33,7 +33,7 @@
         <input type="password" id="passwordVerify" name="passwordVerify">
         <label for="passwordVerify">Verify Password
             <?php
-                    if(issset($warning)) {
+                    if(isset($warning)) {
                         echo "<span style='color:red'>*</span>";
                     }
             ?>
