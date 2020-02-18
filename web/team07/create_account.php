@@ -32,8 +32,8 @@ if($num > 0 ) {
     die();
 }
 else {
-    header("location: sign_up.php");
-    die();
+    //header("location: sign_up.php");
+    //die();
 }
 
 //check existing username and returns 1 if username is used
