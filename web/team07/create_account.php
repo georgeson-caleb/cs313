@@ -11,10 +11,9 @@ if(checkExistingUsername($username) > 0) {
 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 
-
 //check if passwords match
 $passwordVerify = filter_input(INPUT_POST, 'passwordVerify', FILTER_SANITIZE_STRING);
-if($password != $passwordVerifY) {
+if($password != $passwordVerify) {
     $warning = "<p style='color:red'>The passwords do not match</p>";
     header("sign_up.php");
 }
