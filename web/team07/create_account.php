@@ -32,6 +32,7 @@ if(addUser($username, $hashed_pass) > 0 ) {
 }
 else {
     header("location: sign_up.php");
+    die();
 }
 
 //check existing username and returns 1 if username is used
@@ -49,7 +50,7 @@ function checkExistingUsername($username){
 //returns 1 if successful
 function addUser($username, $password) {
     $db = get_db();
-    $query = "INSERT INTO users_team (username, password) VALUES (:username, :password)";
+    $query = 'INSERT INTO users_team (username, password) VALUES (:username, :password)';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $stmt->bindValue(':password', $password, PDO::PARAM_STR);
