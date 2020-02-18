@@ -15,7 +15,7 @@ $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 $passwordVerify = filter_input(INPUT_POST, 'passwordVerify', FILTER_SANITIZE_STRING);
 if($password != $passwordVerify) {
     $warning = "<p style='color:red'>The passwords do not match</p>";
-    header("sign_up.php");
+    header("location: sign_up.php");
 }
 
 if(addUser($username, $hashed_pass) > 0 ) {
