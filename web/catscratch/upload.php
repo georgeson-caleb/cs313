@@ -24,6 +24,8 @@
    }
 
    $imageFileType = strtolower(pathinfo($_FILES["image"]["tmp_name"],PATHINFO_EXTENSION));
+
+   echo $imageFileType;
  
    // Create a unique filename based on the current time
    $filename = $path . time() . $imageFileType;
