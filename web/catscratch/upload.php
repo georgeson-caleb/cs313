@@ -20,7 +20,8 @@
       mkdir($path);
    }
  
-   $filename = $path . basename($_FILES["image"]["name"]);
+   // Create a unique filename based on the current time
+   $filename = $path . time();
 
    $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
 
