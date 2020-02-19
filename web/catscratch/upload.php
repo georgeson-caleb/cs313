@@ -22,11 +22,11 @@
    if (!is_dir($path)) {
       mkdir($path);
    }
+
+   $imageFileType = strtolower(pathinfo($_FILES["image"]["tmp_name"],PATHINFO_EXTENSION));
  
    // Create a unique filename based on the current time
-   $filename = $path . time();
-
-   $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
+   $filename = $path . time() . $imageFileType;
 
    $uploadOk = true;
 
