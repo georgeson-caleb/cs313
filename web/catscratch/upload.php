@@ -28,7 +28,7 @@
    echo "Filetype: " . $imageFileType . "<br>";
  
    // Create a unique filename based on the current time
-   $filename = $path . time() . $imageFileType;
+   $filename = $path . time() . "." . $imageFileType;
 
    $uploadOk = true;
 
@@ -86,5 +86,4 @@
       echo "The file was not uploaded.";
    }
    
-
 ?>

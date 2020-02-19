@@ -29,7 +29,7 @@
    
    </div>
    <h3 class="text-center">Add a cat</h3>
-   <div id="info-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
+   <div id="info-box" class="d-flex w-75 mx-auto mb-2 p-2 border rounded">
       <label for="name">Cat's name:</label>
       <input type="text" id="name"></br>
       <label for="age">Age (years):</label>

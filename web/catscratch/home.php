@@ -2,7 +2,40 @@
    require("dbConnect.php");
    $db = get_db();
    
-   session_start();
+   session_start();   
+
+   function getCatName($cat_id) {
+      global $db;
+      $query = "SELECT cat_name FROM cats WHERE id=:id;";
+      $stmt = $db->prepare($query);
+      $stmt->bindValue(":id", $cat_id, PDO::PARAM_INT);
+      $stmt->execute();
+
+      return $stmt->fetch(PDO::FETCH_ASSOC)["cat_name"];
+   }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title> Catscratch - Share your kitties!</title>
+   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="script.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header id="top" class="d-flex justify-content-between">
+   <h1>Catscratch</h1>
+   <h4> Welcome, 
+   <?php echo $username; ?>
+   </h4>
+   </header>
+   
+
+<?
    if ($_SESSION["dq4r1"] == "") {
       // Not logged in
       echo "not logged in";
@@ -36,42 +69,12 @@
          $stmt->execute();
          array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
       }
-   }
-
-   function getCatName($cat_id) {
-      global $db;
-      $query = "SELECT cat_name FROM cats WHERE id=:id;";
-      $stmt = $db->prepare($query);
-      $stmt->bindValue(":id", $cat_id, PDO::PARAM_INT);
-      $stmt->execute();
-
-      return $stmt->fetch(PDO::FETCH_ASSOC)["cat_name"];
-   }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-   <title> Catscratch - Share your kitties!</title>
-   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-   <script src="script.js"></script>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   <link rel="stylesheet" href="style.css">
-</head>
-<body>
-   <header id="top" class="d-flex justify-content-between">
-   <h1>Catscratch</h1>
-   <h4> Welcome, 
-   <?php echo $username; ?>
-   </h4>
-   </header>
-   
    </div>
    <h3 class="text-center">Your Cats</h3>
    <div id="info-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
-      <?php
+      <?
 
          if (count($cats) == 0) {
             echo "No cats yet. Add some to see them here!";
@@ -88,9 +91,11 @@
 
       ?>
 
-      <div class='border rounded w-25 mx-2 mb-3' onclick="showAddCatForm()">
+      <div class='border rounded w-25 mx-2 mb-3'>
          <a href="add-cat.php"> Click to add a kitty! </a>
       </div>
    </div>
+
+   <?}?>
 </body>
 </html>
