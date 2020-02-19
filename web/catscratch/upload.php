@@ -56,7 +56,7 @@
       try {
          $upload = $s3->upload($bucket, $filename, fopen($_FILES["image"]["tmp_name"], 'rb'), 'public-read'); 
       } catch(Exception $e) {
-         echo "Error uploading file";
+         echo "Error uploading file: $e";
          die();
       }
 
