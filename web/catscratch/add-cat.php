@@ -3,12 +3,6 @@
    $db = get_db();
    
    session_start();
-   if ($_SESSION["dq4r1"] == "") {
-      // Not logged in
-      echo "not logged in";
-   } else {
-
-   }
 ?>
 
 <!DOCTYPE html>
@@ -25,10 +19,16 @@
 <body>
    <header id="top">
       <h1>Catscratch</h1>
+      <p onclick="window.location = 'home.php'">Home</p>
    </header>
-   
-   </div>
+   <?if ($_SESSION["dq4r1"] == "") {
+      // Not logged in
+      echo "Oops! You're not logged in. Click <a href='index.php'>here</a> to log in.";
+   } else {
+   ?>
+   <div class="d-flex">
    <h3 class="text-center">Add a cat</h3>
+   </div>
    <div id="info-box" class="w-75 mx-auto mb-2 p-2 border rounded">
       <label for="name">Cat's name:</label>
       <input type="text" id="name"></br>
@@ -43,5 +43,6 @@
       <button type="button" onclick="uploadImg()">Submit</button>
    </div>
    <div id="response"></div>
+   <?}?>
 </body>
 </html>
