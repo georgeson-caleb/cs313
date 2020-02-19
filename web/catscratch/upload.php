@@ -24,8 +24,6 @@
    }
 
    $imageFileType = strtolower(pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION));
-
-   echo "Filetype: " . $imageFileType . "<br>";
  
    // Create a unique filename based on the current time
    $filename = $path . time() . "." . $imageFileType;
@@ -81,6 +79,8 @@
       $stmt->bindValue(":image_name", $upload->get("ObjectURL"), PDO::PARAM_STR);
       $stmt->bindValue(":cat_id", $cat_id, PDO::PARAM_INT);
       $stmt->execute();
+
+      echo "Kitty uploaded!";
 
    } else {
       echo "The file was not uploaded.";
