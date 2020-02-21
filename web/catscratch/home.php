@@ -43,7 +43,7 @@
          <div class="mt-2 mx-auto p-2 border rounded">Oops! You're not logged in. Click <a href='index.php'>here</a> to log in.</div>
       <?
    } else {
-      showKitties();
+      showKitties($_SESSION["dq4r1"]);
       
       ?>
 
