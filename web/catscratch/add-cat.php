@@ -19,7 +19,7 @@
 <body>
    <header id="top">
       <h1>Catscratch</h1>
-      <p onclick="window.location = 'home.php'">Home</p>
+      <div onclick="window.location = 'home.php'">Home</div>
    </header>
    <?if ($_SESSION["dq4r1"] == "") {
       // Not logged in
