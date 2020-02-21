@@ -1,6 +1,6 @@
 <?php
    require("dbConnect.php");
-   include("findKitties.php")
+   include("findKitties.php");
    $db = get_db();
    
    session_start();   
