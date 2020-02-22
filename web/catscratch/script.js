@@ -136,4 +136,16 @@ function uploadImg() {
    });
 }
 
+function showAddCat() {
+
+   $.ajax({
+      url: 'add-cat.php',
+      type: 'POST',
+      complete : function(response) {
+         document.getElementById("info-box").innerHTML = response.responseText;
+      }
+   });
+
+}
+
 
