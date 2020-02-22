@@ -1,6 +1,5 @@
 <?php
    require("dbConnect.php");
-   include("findKitties.php");
    $db = get_db();
    
    session_start();   
@@ -118,7 +117,5 @@
          </div>
       </div> <!--cat-box-->
    </div> <!--info-box-->
-
-   <?}?>
 </body>
 </html>
