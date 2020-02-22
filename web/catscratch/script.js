@@ -137,15 +137,18 @@ function uploadImg() {
 }
 
 function showAddCat() {
-
-   $.ajax({
-      url: 'add-cat.php',
-      type: 'POST',
-      complete : function(response) {
-         document.getElementById("info-box").innerHTML = response.responseText;
-      }
-   });
-
+   document.getElementById("addCat").style.display = block;
 }
 
+function hideAddCat() {
+   document.getElementById("addCat").style.display = none;
+}
+
+function showInfo() {
+   document.getElementById("info-box").style.display = block;
+}
+
+function hideInfo() {
+   document.getElementById("info-box").style.display = none;
+}
 
