@@ -86,7 +86,7 @@
          $stmt->bindValue(":id", $cat["id"], PDO::PARAM_INT);
          $stmt->execute();
          $pics = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         if (count($pics < 0)) {
+         if (count($pics <= 0)) {
             array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
          } else {
             $pictureStandIn = array();
