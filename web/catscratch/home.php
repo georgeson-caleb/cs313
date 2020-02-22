@@ -91,12 +91,9 @@
          } else {
             $pictureStandIn = array();
             //arrayPush($pictureStandIn, array("image_name" => "/img/pixel_cat.png", "cat_id" => $cat["id"]));
-            echo(json_encode($pictureStandIn));
             array_push($pictures, $pictureStandIn);
          }
       }
-
-      echo(json_encode($pictures));
 
    ?>
    
@@ -110,7 +107,6 @@
          }
 
          foreach ($pictures as $picture) {
-            echo(json_encode($picture));
             $image = $picture[0]["image_name"];
             $cat_name = getCatName($picture[0]["cat_id"]); 
               echo "<div class='border rounded w-25 mx-2 mb-3'>
