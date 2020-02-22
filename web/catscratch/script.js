@@ -107,33 +107,59 @@ function processLogin(success) {
    }
 }
 
-
-// Based on code found here: https://stackoverflow.com/questions/19617996/file-upload-without-form
 function uploadImg() {
-   var pictureInput = document.getElementById("image");
-   var name = document.getElementById("name").value;
-   var age = document.getElementById("age").value;
-   var fav_food = document.getElementById("fav_food").value;
-   var fav_pastime = document.getElementById("fav_pastime").value;
    
-   var myFormData = new FormData();
-   myFormData.append('image', pictureInput.files[0]);
-   myFormData.append('name', name);
-   myFormData.append('age', age);
-   myFormData.append('food', fav_food);
-   myFormData.append('pastime', fav_pastime);
+   if (validateAddCatInput()) {
+      
+      var pictureInput = document.getElementById("image");
+      var name = document.getElementById("name").value;
+      var age = document.getElementById("age").value;
+      var fav_food = document.getElementById("fav_food").value;
+      var fav_pastime = document.getElementById("fav_pastime").value;
+      
+      var myFormData = new FormData();
+      myFormData.append('image', pictureInput.files[0]);
+      myFormData.append('name', name);
+      myFormData.append('age', age);
+      myFormData.append('food', fav_food);
+      myFormData.append('pastime', fav_pastime);
 
-   $.ajax({
-      url: 'upload.php',
-      type: 'POST',
-      processData: false, // important
-      contentType: false, // important
-      dataType : 'json',
-      data: myFormData, 
-      complete : function(response) {
-         document.getElementById("response").innerHTML = response.responseText;
-      }
-   });
+      $.ajax({
+         url: 'upload.php',
+         type: 'POST',
+         processData: false,
+         contentType: false,
+         dataType : 'json',
+         data: myFormData, 
+         complete : function(response) {
+            document.getElementById("response").innerHTML = response.responseText;
+         }
+      });
+   }
+}
+
+function validateAddCatInput() {
+   var pictures = document.getElementById("image").files;
+   var name = document.getElementById("name").value;
+   var valid = true;
+
+   if (pictures.length = 0) {
+      showError("imageError", "* Required field");
+      valid = false;
+   } else {
+      disableError("imageError");
+      valid = true & valid;
+   }
+
+   if (name == "") {
+      showError("nameError", "* Required field");
+      valid = false;
+   } else {
+      disableError("imageError");
+      valid = true & valid;
+   }
+
+   return valid;
 }
 
 function showAddCat() {
