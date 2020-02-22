@@ -87,7 +87,7 @@
          $stmt->execute();
          $pics = $stmt->fetchAll(PDO::FETCH_ASSOC);
          if (count($pics <= 0)) {
-            array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
+            array_push($pictures, $pics);
          } else {
             $pictureStandIn = array();
             arrayPush($pictureStandIn, array("image_name" => "/img/pixel_cat.png", "cat_id" => $cat["id"]));
