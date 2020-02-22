@@ -85,7 +85,14 @@
       foreach ($cats as $cat) {
          $stmt->bindValue(":id", $cat["id"], PDO::PARAM_INT);
          $stmt->execute();
-         array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
+         $pics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+         if (count($pics < 0)) {
+            array_push($pictures, $stmt->fetchAll(PDO::FETCH_ASSOC));
+         } else {
+            $pictureStandIn = array();
+            arrayPush($pictureStandIn, array("image_name" => "/img/pixel_cat.png", "cat_id" => $cat["id"]));
+            array_push($pictures, $pictureStandIn);
+         }
       }
 
    ?>
