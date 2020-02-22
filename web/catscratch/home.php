@@ -108,7 +108,6 @@
                </div>";
 
          }
-   }
       
       ?>
 
@@ -131,5 +130,6 @@
       <button type="button" onclick="uploadImg()">Submit</button>
       <button type="button" onclick="hideAddCat(); showInfo();">Back to cats</button>
    </div>
+   <?}?>
 </body>
 </html>
