@@ -107,6 +107,7 @@
          }
 
          foreach ($pictures as $picture) {
+            echo(json_encode($picture));
             $image = $picture[0]["image_name"];
             $cat_name = getCatName($picture[0]["cat_id"]); 
               echo "<div class='border rounded w-25 mx-2 mb-3'>
