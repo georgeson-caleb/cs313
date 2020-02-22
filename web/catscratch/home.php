@@ -72,7 +72,7 @@
       $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id;";
 
       $stmt = $db->prepare($query);
-      $stmt->bindValue(":id", $userId, PDO::PARAM_INT);
+      $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
       $stmt->execute();
 
       $cats = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -137,18 +137,17 @@ function uploadImg() {
 }
 
 function showAddCat() {
-   document.getElementById("addCat").style.display = block;
+   document.getElementById("addCat").style.display = "block";
 }
 
 function hideAddCat() {
-   document.getElementById("addCat").style.display = none;
+   document.getElementById("addCat").style.display = "none";
 }
 
 function showInfo() {
-   document.getElementById("info-box").style.display = block;
+   document.getElementById("info-box").style.display = "block";
 }
 
 function hideInfo() {
-   document.getElementById("info-box").style.display = none;
+   document.getElementById("info-box").style.display = "none";
 }
-
