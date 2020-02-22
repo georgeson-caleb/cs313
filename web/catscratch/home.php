@@ -89,8 +89,8 @@
          if (count($pics <= 0)) {
             array_push($pictures, $pics);
          } else {
-            $pictureStandIn = array();
-            arrayPush($pictureStandIn, array("image_name" => "/img/pixel_cat.png", "cat_id" => $cat["id"]));
+            $pictureStandIn = array("image_name" => "/img/pixel_cat.png", "cat_id" => $cat["id"]);
+            //arrayPush($pictureStandIn, array("image_name" => "/img/pixel_cat.png", "cat_id" => $cat["id"]));
             array_push($pictures, $pictureStandIn);
          }
       }
@@ -111,7 +111,7 @@
             $cat_name = getCatName($picture[0]["cat_id"]); 
               echo "<div class='border rounded w-25 mx-2 mb-3'>
                   <h3 class='text-center'>$cat_name</h3>
-                  <img src='$image' class='img-fluid'>
+                  <img src='$image' class='img-fluid w-100'>
                </div>";
 
          }
