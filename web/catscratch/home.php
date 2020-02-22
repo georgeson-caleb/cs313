@@ -90,7 +90,7 @@
             array_push($pictures, $pics);
          } else {
             $pictureStandIn = array();
-            arrayPush($pictureStandIn, array("image_name" => "/img/pixel_cat.png", "cat_id" => $cat["id"]));
+            //arrayPush($pictureStandIn, array("image_name" => "/img/pixel_cat.png", "cat_id" => $cat["id"]));
             echo(json_encode($pictureStandIn));
             array_push($pictures, $pictureStandIn);
          }
