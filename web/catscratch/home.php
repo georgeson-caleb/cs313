@@ -115,9 +115,9 @@ foreach ($pictures as $picture) {
 
 }?>
 
-         <div class='border rounded w-25 mx-2 mb-3' onclick="showAddCat(); hideInfo();">
+         <button class='border rounded w-25 mx-2 mb-3' onclick="showAddCat(); hideInfo();">
             Click to add a kitty!
-         </div>
+         </button>
       </div> <!--cat-box-->
    </div> <!--info-box-->
    <div id="addCat" class="w-75 mx-auto mb-2 p-2 border rounded">
@@ -134,6 +134,7 @@ foreach ($pictures as $picture) {
       <button type="button" onclick="uploadImg()">Submit</button>
       <button type="button" onclick="hideAddCat(); showInfo();">Back to cats</button>
    </div>
+   <div id="response"></div>
    <?}?>
 </body>
 </html>
