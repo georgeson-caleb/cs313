@@ -106,35 +106,22 @@ if (count($cats) == 0) {
 }
 
 foreach ($pictures as $picture) {
+   $cat_id = $picture["cat_id"];
    $image = $picture["image_name"];
-   $cat_name = getCatName($picture["cat_id"]); 
-     echo "<div class='cat-card border rounded w-25 mx-2 mb-3'>
+   $cat_name = getCatName($cat_id);
+
+     echo "<a href='cat-info.php?cat_id=$cat_id'><div class='cat-card border rounded w-25 mx-2 mb-3'>
          <h3 class='text-center'>$cat_name</h3>
          <img src='$image' class='img-fluid w-100'>
-      </div>";
+         </div></a>";
 
 }?>
 
-         <button class='border rounded w-25 mx-2 mb-3' onclick="showAddCat(); hideInfo();">
+         <button class='border rounded w-25 mx-2 mb-3' onclick="window.location = 'add-cat.php'">
             Click to add a kitty!
          </button>
       </div> <!--cat-box-->
    </div> <!--info-box-->
-   <div id="addCat" class="w-75 mx-auto mb-2 p-2 border rounded">
-      <label for="name">Cat's name:</label>
-      <input type="text" id="name"><span id="nameError" class="error"></span></br>
-      <label for="age">Age (years):</label>
-      <input type="number" id="age"></br>
-      <label for="image">Picture:</label>
-      <input type="file" accept="image/*" id="image"><span id="imageError" class="error"></span></br>
-      <label for="fav_food">Favorite food:</label>
-      <input type="text" id="fav_food"></br>
-      <label for="fav_pastime">Favorite pastime:</label>
-      <input type="text" id="fav_pastime"></br>
-      <button type="button" onclick="uploadImg()">Submit</button>
-      <button type="button" onclick="hideAddCat(); showInfo();">Back to cats</button>
-   </div>
-   <div id="response"></div>
    <?}?>
 </body>
 </html>
