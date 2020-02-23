@@ -14,3 +14,7 @@
 #addCat {
    display: none;
 }
+
+#cat-card:hover {
+   background-color: #DBCD29;
+}
