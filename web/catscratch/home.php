@@ -4,6 +4,9 @@
    
    session_start();   
 
+   $cats = null;
+   $pictures = array();
+
    // Get the username
    $query = "SELECT username FROM users WHERE id=:id LIMIT 1;";
 
@@ -23,6 +26,59 @@
       return $stmt->fetch(PDO::FETCH_ASSOC)["cat_name"];
    }
 
+   function getCatPics() {
+
+      global $cats;
+      global $pictures;
+
+      // Get the ids of any cats associated with the user id
+      $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id;";
+
+      $stmt = $db->prepare($query);
+      $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
+      $stmt->execute();
+
+      $cats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      // Get the pictures associated with each of the cats
+      $query = "SELECT image_name, cat_id FROM pictures WHERE cat_id=:id;";
+      $stmt = $db->prepare($query);
+      
+      foreach ($cats as $cat) {
+         $stmt->bindValue(":id", $cat["id"], PDO::PARAM_INT);
+         $stmt->execute();
+         $pics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+         if ($stmt->rowCount() > 0) {
+            array_push($pictures, $pics[0]);
+         } else {
+            $standIn = [
+               "image_name" => "img/pixel_cat_large.png",
+               "cat_id" => $cat["id"]
+            ];
+            array_push($pictures, $standIn);
+         }
+      }
+
+   }
+
+   function displayCatPics() {
+      global $cats;
+      global $pictures;
+
+      if (count($cats) == 0) {
+         echo "No cats yet. Add some to see them here!";
+      }
+
+      foreach ($pictures as $picture) {
+         $image = $picture["image_name"];
+         $cat_name = getCatName($picture["cat_id"]); 
+           echo "<div class='border rounded w-25 mx-2 mb-3'>
+               <h3 class='text-center'>$cat_name</h3>
+               <img src='$image' class='img-fluid w-100'>
+            </div>";
+
+      }
+   }
 ?>
 
 <!DOCTYPE html>
@@ -68,58 +124,13 @@
 
       ***************************************************************************************************/
 
-      // Get the ids of any cats associated with the user id
-      $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id;";
-
-      $stmt = $db->prepare($query);
-      $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
-      $stmt->execute();
-
-      $cats = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-      // Get the pictures associated with each of the cats
-      $query = "SELECT image_name, cat_id FROM pictures WHERE cat_id=:id;";
-      $stmt = $db->prepare($query);
-      $pictures = array();
-      
-      foreach ($cats as $cat) {
-         $stmt->bindValue(":id", $cat["id"], PDO::PARAM_INT);
-         $stmt->execute();
-         $pics = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         echo json_encode($pics);
-         if ($stmt->rowCount() > 0) {
-            array_push($pictures, $pics[0]);
-         } else {
-            $standIn = [
-               "image_name" => "img/pixel_cat_large.png",
-               "cat_id" => $cat["id"]
-            ];
-            array_push($pictures, $standIn);
-         }
-      }
-
+      getCatPics();
    ?>
    
-   <h3 class="text-center">Your Cats</h3><div id="cat-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
+   <h3 class="text-center">Your Cats</h3>
+   <div id="cat-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
 
-   <?
-
-
-         if (count($cats) == 0) {
-            echo "No cats yet. Add some to see them here!";
-         }
-
-         foreach ($pictures as $picture) {
-            $image = $picture["image_name"];
-            $cat_name = getCatName($picture["cat_id"]); 
-              echo "<div class='border rounded w-25 mx-2 mb-3'>
-                  <h3 class='text-center'>$cat_name</h3>
-                  <img src='$image' class='img-fluid w-100'>
-               </div>";
-
-         }
-      
-      ?>
+   <?displayCatPics();?>
 
          <div class='border rounded w-25 mx-2 mb-3' onclick="showAddCat(); hideInfo();">
             Click to add a kitty!
@@ -138,7 +149,7 @@
       <label for="fav_pastime">Favorite pastime:</label>
       <input type="text" id="fav_pastime"></br>
       <button type="button" onclick="uploadImg()">Submit</button>
-      <button type="button" onclick="hideAddCat(); showInfo();">Back to cats</button>
+      <button type="button" onclick="hideAddCat(); showInfo(); <?getCatPics();displayCatPics();?>">Back to cats</button>
    </div>
    <?}?>
 </body>
