@@ -108,7 +108,7 @@ if (count($cats) == 0) {
 foreach ($pictures as $picture) {
    $image = $picture["image_name"];
    $cat_name = getCatName($picture["cat_id"]); 
-     echo "<div class='cat-card border rounded w-25 mx-2 mb-3 view overlay zoom'>
+     echo "<div class='cat-card border rounded w-25 mx-2 mb-3'>
          <h3 class='text-center'>$cat_name</h3>
          <img src='$image' class='img-fluid w-100'>
       </div>";
