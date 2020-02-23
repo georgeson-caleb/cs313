@@ -24,6 +24,7 @@
    $stmt->bindValue(":age", $age, PDO::PARAM_INT);
    $stmt->bindValue(":id", $_SESSION["dq4r1"], PDO::PARAM_INT);
    $stmt->execute();
+   echo ("Cat info added.");
 
    // Save the id
    $cat_id = $db->lastInsertId();
