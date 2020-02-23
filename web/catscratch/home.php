@@ -4,9 +4,6 @@
    
    session_start();   
 
-   $cats = null;
-   $pictures = array();
-
    // Get the username
    $query = "SELECT username FROM users WHERE id=:id LIMIT 1;";
 
@@ -28,8 +25,7 @@
 
    function getCatPics() {
 
-      global $cats;
-      global $pictures;
+      $pictures = array();
 
       // Get the ids of any cats associated with the user id
       $query = "SELECT id, cat_name FROM cats WHERE owner_id=:id;";
@@ -59,12 +55,6 @@
          }
       }
 
-   }
-
-   function displayCatPics() {
-      global $cats;
-      global $pictures;
-
       if (count($cats) == 0) {
          echo "No cats yet. Add some to see them here!";
       }
@@ -78,6 +68,7 @@
             </div>";
 
       }
+
    }
 ?>
 
@@ -123,14 +114,12 @@
       <?
 
       ***************************************************************************************************/
-
-      getCatPics();
    ?>
    
    <h3 class="text-center">Your Cats</h3>
    <div id="cat-box" class="d-flex flex-wrap w-75 mx-auto mb-2 p-2 border rounded">
 
-   <?displayCatPics();?>
+   <?getCatPics();?>
 
          <div class='border rounded w-25 mx-2 mb-3' onclick="showAddCat(); hideInfo();">
             Click to add a kitty!
@@ -149,7 +138,7 @@
       <label for="fav_pastime">Favorite pastime:</label>
       <input type="text" id="fav_pastime"></br>
       <button type="button" onclick="uploadImg()">Submit</button>
-      <button type="button" onclick="hideAddCat(); showInfo(); <?getCatPics();displayCatPics();?>">Back to cats</button>
+      <button type="button" onclick="hideAddCat(); showInfo(); <?getCatPics();?>">Back to cats</button>
    </div>
    <?}?>
 </body>
