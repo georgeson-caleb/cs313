@@ -110,10 +110,11 @@ foreach ($pictures as $picture) {
    $image = $picture["image_name"];
    $cat_name = getCatName($cat_id);
 
-     echo "<a href='cat-info.php?cat_id=$cat_id'><div class='cat-card border rounded w-25 mx-2 mb-3'>
+     echo "<div class='cat-card border rounded w-25 mx-2 mb-3'>
+         <a href='cat-info.php?cat_id=$cat_id'>
          <h3 class='text-center'>$cat_name</h3>
          <img src='$image' class='img-fluid w-100'>
-         </div></a>";
+         </a></div>";
 
 }?>
 
