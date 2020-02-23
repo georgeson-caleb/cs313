@@ -88,6 +88,7 @@
          $pics = $stmt->fetchAll(PDO::FETCH_ASSOC);
          echo json_encode($pics);
          if ($stmt->rowCount() > 0) {
+            echo "hi";
             array_push($pictures, $pics);
          } else {
             array_push($pictures, json_decode('[{"image_name":"img/pixel_cat_large.png","cat_id":' . $cat["id"] . '}]'));
