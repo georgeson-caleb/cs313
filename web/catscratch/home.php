@@ -89,10 +89,8 @@
          if ($stmt->rowCount() > 0) {
             array_push($pictures, $pics);
          } else {
-            $pictureStandIn = array();
-            $pixel_cat = ["image_name" => "img/pixel_cat.png", "cat_id" => $cat["id"]];
-            arrayPush($pictureStandIn, $pixel_cat);
-            array_push($pictures, $pictureStandIn);
+            $thisId = $cat['id'];
+            array_push($pictures, json_decode("[{'image_name':'img/pixel_cat_large.png','cat_id':'$thisId'}]"));
          }
       }
 
