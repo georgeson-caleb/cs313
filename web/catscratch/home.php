@@ -90,7 +90,7 @@
          if ($stmt->rowCount() > 0) {
             array_push($pictures, $pics);
          } else {
-            array_push($pictures, json_decode('[{"image_name":"img/pixel_cat_large.png","cat_id":"' . $cat["id"] . '"}]'));
+            array_push($pictures, json_decode('[{"image_name":"img/pixel_cat_large.png","cat_id":' . $cat["id"] . '}]'));
          }
       }
 
