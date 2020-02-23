@@ -37,7 +37,7 @@
       echo "Oops! You're not logged in. Click <a href='index.php'>here</a> to log in.";
    } else {
       $cat_id = $_GET["cat_id"];
-      echo $cat_id;
+      echo "cat id: " . $cat_id;
       $cat = getCat($cat_id);
       $stmt = $db->prepare("SELECT image_name FROM pictures WHERE cat_id=:id");
       $stmt->bindValue(":id", $cat_id, PDO::PARAM_INT);
